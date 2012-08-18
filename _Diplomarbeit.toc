@@ -1,0 +1,196 @@
+\select@language {ngerman}
+\contentsline {chapter}{Erkl\IeC {\"a}rung}{iii}{chapter*.1}
+\contentsline {chapter}{Vorwort}{vii}{chapter*.3}
+\contentsline {chapter}{Kurzfassung}{viii}{chapter*.5}
+\contentsline {chapter}{Abstract}{ix}{chapter*.6}
+\select@language {english}
+\select@language {ngerman}
+\contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.7}
+\contentsline {section}{\numberline {1.1}Zielsetzung}{1}{section.8}
+\contentsline {section}{\numberline {1.2}Warum {La\discretionary {-}{}{}TeX\xspace }?}{1}{section.10}
+\contentsline {chapter}{\numberline {2}Die Diplomschrift}{3}{chapter.13}
+\contentsline {section}{\numberline {2.1}Elemente der Diplomschrift}{3}{section.14}
+\contentsline {section}{\numberline {2.2}Diplomschriften in Englisch}{4}{section.20}
+\contentsline {chapter}{\numberline {3}Zum Arbeiten mit La\discretionary {-}{}{}TeX\xspace }{5}{chapter.21}
+\contentsline {section}{\numberline {3.1}Start}{5}{section.22}
+\contentsline {subsection}{\numberline {3.1.1}Software}{6}{subsection.24}
+\contentsline {subsubsection}{Windows}{6}{section*.25}
+\contentsline {subsubsection}{Mac~OS}{6}{section*.30}
+\contentsline {subsubsection}{Linux}{7}{section*.33}
+\contentsline {subsubsection}{Automatische Generierung von La\discretionary {-}{}{}TeX\xspace -Code}{7}{section*.40}
+\contentsline {subsection}{\numberline {3.1.2}Literatur}{8}{subsection.46}
+\contentsline {section}{\numberline {3.2}Schrift}{8}{section.49}
+\contentsline {subsection}{\numberline {3.2.1}Schriftarten}{8}{subsection.50}
+\contentsline {subsection}{\numberline {3.2.2}Texte hervorheben}{9}{subsection.52}
+\contentsline {section}{\numberline {3.3}Textstruktur}{10}{section.54}
+\contentsline {subsection}{\numberline {3.3.1}Absatztrennung}{10}{subsection.55}
+\contentsline {subsection}{\numberline {3.3.2}\IeC {\"U}berschriften}{10}{subsection.59}
+\contentsline {paragraph}{H\IeC {\"a}ufiger Fehler:}{11}{section*.61}
+\contentsline {subsection}{\numberline {3.3.3}Listen}{11}{subsection.62}
+\contentsline {subsection}{\numberline {3.3.4}Absatzformatierung und Zeilenabstand}{11}{subsection.63}
+\contentsline {subsection}{\numberline {3.3.5}Fu\IeC {\ss }noten}{11}{subsection.64}
+\contentsline {subsubsection}{Fu\IeC {\ss }noten in \IeC {\"U}berschriften}{12}{section*.65}
+\contentsline {subsection}{\numberline {3.3.6}Querverweise}{12}{subsection.67}
+\contentsline {section}{\numberline {3.4}Wortabstand und Punktuation}{13}{section.68}
+\contentsline {subsection}{\numberline {3.4.1}\emph {French Spacing}}{13}{subsection.69}
+\contentsline {subsection}{\numberline {3.4.2}Gedanken- und Bindestriche}{13}{subsection.70}
+\contentsline {subsection}{\numberline {3.4.3}Kommentare}{14}{subsection.76}
+\contentsline {subsection}{\numberline {3.4.4}Anf\IeC {\"u}hrungszeichen}{15}{subsection.77}
+\contentsline {section}{\numberline {3.5}Abteilen}{15}{section.78}
+\contentsline {section}{\numberline {3.6}Das {\tt htl}-Paket}{16}{section.80}
+\contentsline {subsection}{\numberline {3.6.1}Einstellungen}{16}{subsection.81}
+\contentsline {subsubsection}{Angaben zur Arbeit}{16}{section*.82}
+\contentsline {subsubsection}{Titelseiten}{17}{section*.83}
+\contentsline {subsection}{\numberline {3.6.2}Definierte Abk\IeC {\"u}rzungen}{17}{subsection.84}
+\contentsline {subsection}{\numberline {3.6.3}Sprachumschaltung}{18}{subsection.88}
+\contentsline {subsection}{\numberline {3.6.4}Zus\IeC {\"a}tzliche {La\discretionary {-}{}{}TeX\xspace }-Pakete}{18}{subsection.89}
+\contentsline {section}{\numberline {3.7}La\discretionary {-}{}{}TeX\xspace -Fehlermeldungen und Warnungen}{18}{section.91}
+\contentsline {chapter}{\numberline {4}Abbildungen, Tabellen, Quellkode}{20}{chapter.92}
+\contentsline {section}{\numberline {4.1}Allgemeines}{20}{section.93}
+\contentsline {section}{\numberline {4.2}\emph {Let Them Float!}}{21}{section.95}
+\contentsline {section}{\numberline {4.3}Captions}{21}{section.96}
+\contentsline {section}{\numberline {4.4}Abbildungen}{22}{section.109}
+\contentsline {subsection}{\numberline {4.4.1}Wo liegen die Grafikdateien?}{23}{subsection.110}
+\contentsline {subsection}{\numberline {4.4.2}Grafiken einrahmen}{23}{subsection.111}
+\contentsline {subsection}{\numberline {4.4.3}Rasterbilder (Pixelgrafiken)}{23}{subsection.112}
+\contentsline {subsubsection}{JPEG-Problematik}{24}{section*.113}
+\contentsline {subsection}{\numberline {4.4.4}Vektorgrafiken}{25}{subsection.116}
+\contentsline {subsubsection}{Einbettung von Schriften}{25}{section*.117}
+\contentsline {subsubsection}{Strichst\IeC {\"a}rken -- \emph {Hairlines} vermeiden!}{25}{section*.118}
+\contentsline {subsection}{\numberline {4.4.5}TeX\xspace -Schriften auch in Grafiken?}{25}{subsection.119}
+\contentsline {subsubsection}{\emph {BaKoMa}-Schriften}{26}{section*.120}
+\contentsline {subsection}{\numberline {4.4.6}Abbildungen mit mehreren Elementen}{26}{subsection.122}
+\contentsline {subsection}{\numberline {4.4.7}Quellenangaben in Captions}{26}{subsection.123}
+\contentsline {section}{\numberline {4.5}Tabellen}{26}{section.125}
+\select@language {english}
+\select@language {ngerman}
+\contentsline {section}{\numberline {4.6}Programmtexte}{28}{section.148}
+\contentsline {subsection}{\numberline {4.6.1}Formatierung von Programmkode}{29}{subsection.149}
+\contentsline {subsection}{\numberline {4.6.2}Platzierung von Programmkode}{29}{subsection.180}
+\contentsline {subsubsection}{Programmtext im laufenden Text}{29}{section*.181}
+\contentsline {subsubsection}{Programmtexte als Float-Elemente}{31}{section*.192}
+\contentsline {subsubsection}{Programmtext im Anhang}{31}{section*.193}
+\contentsline {chapter}{\numberline {5}Mathem.\ Formeln etc.}{32}{chapter.195}
+\contentsline {section}{\numberline {5.1}Mathematische Elemente im Flie\IeC {\ss }text}{32}{section.196}
+\contentsline {paragraph}{H\IeC {\"a}ufiger Fehler:}{32}{section*.197}
+\contentsline {section}{\numberline {5.2}Freigestellte Ausdr\IeC {\"u}cke}{32}{section.198}
+\contentsline {subsection}{\numberline {5.2.1}Einfache Gleichungen}{33}{subsection.199}
+\contentsline {subsection}{\numberline {5.2.2}Mehrzeilige Gleichungen}{33}{subsection.207}
+\contentsline {subsection}{\numberline {5.2.3}Fallunterscheidungen}{34}{subsection.217}
+\contentsline {subsection}{\numberline {5.2.4}Gleichungen mit Matrizen}{34}{subsection.228}
+\contentsline {subsection}{\numberline {5.2.5}Verweise auf Gleichungen}{35}{subsection.248}
+\contentsline {section}{\numberline {5.3}Spezielle Symbole}{35}{section.249}
+\contentsline {subsection}{\numberline {5.3.1}Zahlenmengen}{35}{subsection.250}
+\contentsline {subsection}{\numberline {5.3.2}Operatoren}{35}{subsection.251}
+\contentsline {subsection}{\numberline {5.3.3}Symbole mit mehreren Zeichen}{36}{subsection.253}
+\contentsline {subsection}{\numberline {5.3.4}Funktionen}{36}{subsection.254}
+\contentsline {subsection}{\numberline {5.3.5}Ma\IeC {\ss }einheiten und W\IeC {\"a}hrungen}{36}{subsection.255}
+\contentsline {subsection}{\numberline {5.3.6}Kommas in Dezimalzahlen (Mathematik-Modus)}{37}{subsection.256}
+\contentsline {subsection}{\numberline {5.3.7}Mathematik-Werkzeuge}{37}{subsection.257}
+\contentsline {section}{\numberline {5.4}Algorithmen}{37}{section.258}
+\contentsline {chapter}{\numberline {6}Umgang mit Literatur}{39}{chapter.272}
+\contentsline {paragraph}{Anmerkung:}{39}{section*.273}
+\contentsline {section}{\numberline {6.1}Allgemeines}{39}{section.274}
+\contentsline {section}{\numberline {6.2}Finden von Literator}{39}{section.275}
+\contentsline {section}{\numberline {6.3}Literaturverweise}{39}{section.276}
+\contentsline {subsection}{\numberline {6.3.1}{\tt cite}}{39}{subsection.277}
+\contentsline {subsection}{\numberline {6.3.2}H\IeC {\"a}ufige Fehler}{40}{subsection.278}
+\contentsline {subsubsection}{Verweise au\IeC {\ss }erhalb des Satzes}{40}{section*.279}
+\contentsline {subsubsection}{Zitate}{40}{section*.280}
+\contentsline {section}{\numberline {6.4}Plagiarismus}{41}{section.281}
+\contentsline {section}{\numberline {6.5}Literaturverzeichnis}{41}{section.282}
+\contentsline {subsection}{\numberline {6.5.1}Literaturdaten in BibTeX}{42}{subsection.285}
+\contentsline {subsection}{\numberline {6.5.2}Beispiele}{42}{subsection.288}
+\contentsline {subsubsection}{Buch (\texttt {@book})}{43}{section*.289}
+\contentsline {subsubsection}{Buchbeitrag, Beitrag in einem Sammelband (\texttt {@incollection})}{43}{section*.302}
+\contentsline {subsubsection}{Konferenzbeitrag, Beitrag in einem Tagungsband (\texttt {@inproceedings})}{44}{section*.317}
+\contentsline {subsubsection}{Zeitschriftenbeitrag, Journal Paper (\texttt {@article})}{44}{section*.332}
+\contentsline {subsubsection}{Dissertation (\texttt {@phdthesis})}{44}{section*.345}
+\contentsline {subsubsection}{Diplomarbeit (\texttt {@mastersthesis})}{45}{section*.358}
+\contentsline {subsubsection}{Bachelorarbeit (\texttt {@masterthesis} modifiziert)}{45}{section*.371}
+\contentsline {subsubsection}{Bericht, Technical Report (\texttt {@techreport})}{46}{section*.386}
+\contentsline {subsubsection}{Handbuch, Manual (\texttt {@manual})}{46}{section*.401}
+\contentsline {subsubsection}{Sonderf\IeC {\"a}lle (\texttt {@misc})}{47}{section*.413}
+\contentsline {paragraph}{Patent:}{47}{section*.414}
+\contentsline {paragraph}{Norm:}{47}{section*.426}
+\contentsline {paragraph}{Audio-CD:}{48}{section*.445}
+\contentsline {paragraph}{Film/DVD:}{48}{section*.456}
+\contentsline {paragraph}{Pers\IeC {\"o}nliche Kommunikation:}{49}{section*.468}
+\contentsline {subsubsection}{Online-Quellen, Wiki-Eintr\IeC {\"a}ge etc.}{49}{section*.479}
+\contentsline {subsection}{\numberline {6.5.3}Tipps zur Erstellung von BibTeX-Dateien}{50}{subsection.481}
+\contentsline {subsubsection}{\texttt {month}-Attribut}{50}{section*.482}
+\contentsline {subsubsection}{\texttt {language}-Attribut}{50}{section*.483}
+\contentsline {subsubsection}{\texttt {edition}-Attribut}{50}{section*.484}
+\contentsline {subsubsection}{Listing aller Quellen}{50}{section*.485}
+\contentsline {chapter}{\numberline {7}Drucken der Diplomarbeit}{51}{chapter.486}
+\contentsline {section}{\numberline {7.1}PDF-Workflow}{51}{section.487}
+\contentsline {section}{\numberline {7.2}Drucken}{51}{section.488}
+\contentsline {subsection}{\numberline {7.2.1}Drucker und Papier}{51}{subsection.489}
+\contentsline {subsection}{\numberline {7.2.2}Druckgr\IeC {\"o}\IeC {\ss }e}{51}{subsection.491}
+\contentsline {section}{\numberline {7.3}Binden}{52}{section.492}
+\contentsline {section}{\numberline {7.4}Elektronische Datentr\IeC {\"a}ger (CD-R, DVD)}{52}{section.493}
+\contentsline {chapter}{\numberline {8}Hinweise f\IeC {\"u}r \emph {Word}-Benutzer}{54}{chapter.500}
+\contentsline {chapter}{\numberline {9}Schlussbemerkungen}{56}{chapter.503}
+\contentsline {section}{\numberline {9.1}Lesen und lesen lassen}{56}{section.504}
+\contentsline {section}{\numberline {9.2}Checkliste}{56}{section.505}
+\contentsline {chapter}{\numberline {A}Technische Informationen}{58}{appendix.507}
+\contentsline {section}{\numberline {A.1}Aktuelle Dateiversionen}{58}{section.508}
+\contentsline {section}{\numberline {A.2}Details zur aktuellen Version}{58}{section.509}
+\contentsline {section}{\numberline {A.3}Einstellungen unter Windows}{59}{section.522}
+\contentsline {subsection}{\numberline {A.3.1}TeXnicCenter-Ausgabeprofile}{59}{subsection.523}
+\contentsline {chapter}{\numberline {B}Inhalt der CD-ROM/DVD}{61}{appendix.525}
+\contentsline {paragraph}{Format:}{61}{section*.526}
+\contentsline {section}{\numberline {B.1}PDF-Dateien}{61}{section.528}
+\contentsline {paragraph}{Pfad:}{61}{section*.529}
+\contentsline {section}{\numberline {B.2}La\discretionary {-}{}{}TeX\xspace -Dateien}{61}{section.530}
+\contentsline {paragraph}{Pfad:}{61}{section*.531}
+\contentsline {section}{\numberline {B.3}Style/Class-Dateien}{62}{section.532}
+\contentsline {paragraph}{Pfad:}{62}{section*.533}
+\contentsline {section}{\numberline {B.4}Sonstiges}{62}{section.534}
+\contentsline {paragraph}{Pfad:}{62}{section*.535}
+\contentsline {chapter}{\numberline {C}Chronologische Liste der \IeC {\"A}nderungen}{63}{appendix.536}
+\contentsline {chapter}{\numberline {D}La\discretionary {-}{}{}TeX\xspace -Quellkode}{64}{appendix.537}
+\contentsline {paragraph}{Anmerkung:}{65}{section*.539}
+\contentsline {chapter}{Literaturverzeichnis}{66}{section*.539}
+\select@language {ngerman}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {english}
+\select@language {german}
+\select@language {ngerman}
+\select@language {ngerman}

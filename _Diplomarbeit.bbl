@@ -1,0 +1,287 @@
+\begin{thebibliography}{10}
+  \providebibliographyfont{name}{}%
+  \providebibliographyfont{lastname}{}%
+  \providebibliographyfont{title}{\emph}%
+  \providebibliographyfont{jtitle}{\btxtitlefont}%
+  \providebibliographyfont{etal}{\emph}%
+  \providebibliographyfont{journal}{}%
+  \providebibliographyfont{volume}{}%
+  \providebibliographyfont{ISBN}{\MakeUppercase}%
+  \providebibliographyfont{ISSN}{\MakeUppercase}%
+  \providebibliographyfont{url}{\url}%
+  \providebibliographyfont{numeral}{}%
+  \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+
+\btxselectlanguage {german}
+\bibitem {DIN9241-11}
+\btxtitlefont {\btxifchangecase {Ergonomische anforderungen für
+  bürotätigkeiten mit bildschirmgeräten teil 11: Anforderungen an die
+  gebrauchstauglichkeit - leitsätze}{Ergonomische Anforderungen für
+  Bürotätigkeiten mit Bildschirmgeräten Teil 11: Anforderungen an die
+  Gebrauchstauglichkeit - Leitsätze}}.
+\newblock DIN EN ISO 9241-11, \btxprintmonthyear{.}{1}{1999}{short}.
+
+\bibitem {DIN9241-110}
+\btxtitlefont {\btxifchangecase {Ergonomie der mensch-system-interaktion: Teil
+  110 grundsätze der dialoggestaltung}{Ergonomie der
+  Mensch-System-Interaktion: Teil 110 Grundsätze der Dialoggestaltung}}.
+\newblock DIN 9241-110, 2006.
+
+\btxselectlanguage {english}
+\bibitem {amsldoc02}
+American Mathematical Society\btxauthorcolon\ \btxtitlefont {User's Guide for
+  the {\tt amsmath} Package}, 2002.
+\newblock {\latintext
+  \btxurlfont{ftp://ftp.ams.org/pub/tex/doc/amsmath/amsldoc.pdf}}, Version 2.0.
+
+\bibitem {PAT07}
+\btxnamefont {\btxlastnamefont {Anisetti},~M.}, \btxnamefont
+  {C.~\btxlastnamefont {Ardagna}}, \btxnamefont {V.~\btxlastnamefont
+  {Bellandi}}\btxandcomma {} \btxandshort {.}\ \btxnamefont
+  {E.~\btxlastnamefont {Damiani}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Method, system, network and computer program product for
+  positioning in a mobile communications network}{Method, System, Network and
+  Computer Program Product for Positioning in a Mobile Communications
+  Network}}.
+\newblock European Patent No. EP1765031, \btxprintmonthyear{.}{3}{2007}{short}.
+
+\btxselectlanguage {german}
+\bibitem {Bacher04}
+\btxnamefont {\btxlastnamefont {Bacher},~F.}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Interaktionsmäglichkeiten mit bildschirmen und
+  großflächigen projektionen}{Interaktionsmäglichkeiten mit Bildschirmen und
+  großflächigen Projektionen}}.
+\newblock \btxifchangecase {Bachelorarbeit}{Bachelorarbeit}, Fachhochschule
+  Hagenberg, Medientechnik und -design, Hagenberg, Austria,
+  \btxprintmonthyear{.}{6}{2004}{short}.
+\newblock {\latintext \btxurlfont{http://theses.fh-hagenberg.at}}.
+
+\btxselectlanguage {english}
+\bibitem {Beeler48}
+\btxnamefont {\btxlastnamefont {Beeler},~D.\btxfnamespaceshort E.} \btxandshort
+  {.}\ \btxnamefont {J.\btxfnamespaceshort P. \btxlastnamefont
+  {Mayer}}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {Measurement of the
+  wing and tail loads during acceptance test of the {Bell} {XS-1} research
+  airplane}{Measurement of the wing and tail loads during acceptance test of
+  the {Bell} {XS-1} research airplane}}.
+\newblock \Btxtechrepshort {.}\ NACA-RM-L7L12, NASA Dryden Flight Research
+  Center, Edwards, CA, \btxprintmonthyear{.}{4}{1948}{short}.
+\newblock {\latintext \btxurlfont{www.dfrc.nasa.gov/DTRS/1948/index.html}}.
+
+\bibitem {Braams2008}
+\btxnamefont {\btxlastnamefont {Braams},~J.}\btxauthorcolon\ \btxtitlefont
+  {Babel, a multilingual package for use with {LaTeX}'s standard document
+  classes}, \btxprintmonthyear{.}{4}{2008}{short}.
+\newblock {\latintext
+  \btxurlfont{www.ctan.org/tex-archive/macros/latex/required/babel/}}.
+
+\bibitem {Ears99}
+\btxnamefont {\btxlastnamefont {Burge},~M.} \btxandshort {.}\ \btxnamefont
+  {W.~\btxlastnamefont {Burger}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Ear biometrics}{Ear Biometrics}}.
+\newblock \Btxinshort {.}\ \btxnamefont {\btxlastnamefont
+  {Jain},~A.\btxfnamespaceshort K.}, \btxnamefont {B.~\btxlastnamefont
+  {Ruud}}\btxandcomma {} \btxandshort {.}\ \btxnamefont {P.~\btxlastnamefont
+  {Sharath}}\ (\btxeditorsshort {.}): \btxtitlefont {Biometrics: Personal
+  Identification in Networked Society}, \btxchaptershort {.}~13, \btxpagesshort
+  {.}\ 273--285. \btxpublisherfont {Kluwer Academic Publishers}, Boston, 1999.
+
+\bibitem {Burger87}
+\btxnamefont {\btxlastnamefont {Burger},~W.} \btxandshort {.}\ \btxnamefont
+  {B.~\btxlastnamefont {Bhanu}}\btxauthorcolon\ \btxtitlefont {\btxifchangecase
+  {Qualitative motion understanding}{Qualitative Motion Understanding}}.
+\newblock \Btxinshort {.}\ \btxtitlefont {Proceedings of the Intl.\ Joint
+  Conference on Artificial Intelligence}, \btxpagesshort {.}\ 819--821, San
+  Francisco, \btxprintmonthyear{.}{5}{1987}{short}. \btxpublisherfont {Morgan
+  Kaufmann Publishers}.
+
+\btxselectlanguage {german}
+\bibitem {BurgerBurge06}
+\btxnamefont {\btxlastnamefont {Burger},~W.} \btxandshort {.}\ \btxnamefont
+  {M.~\btxlastnamefont {Burge}}\btxauthorcolon\ \btxtitlefont {Digitale
+  Bildverarbeitung -- Eine Einführung mit Java und ImageJ}.
+\newblock \btxpublisherfont {Springer-Verlag}, Heidelberg, \btxnumeralshort
+  {2}~\btxeditionshort {.}, 2006.
+
+\btxselectlanguage {english}
+\bibitem {Carlisle99}
+\btxnamefont {\btxlastnamefont {Carlisle},~D.\btxfnamespaceshort
+  P.}\btxauthorcolon\ \btxtitlefont {Packages in the {`graphics'} bundle},
+  \btxprintmonthyear{.}{1}{1999}{short}.
+\newblock {\latintext
+  \btxurlfont{www.tex.ac.uk/tex-archive/macros/latex/required/graphics/grfguide.pdf}}.
+
+\btxselectlanguage {german}
+\bibitem {Duden97}
+\btxnamefont {\btxlastnamefont {Christian},~F.}\btxauthorcolon\ \btxtitlefont
+  {Schriftliche Arbeiten im technisch-natur\-wissen\-schaft\-lichen Studium:
+  ein Leitfaden zur effektiven Erstellung und zum Einsatz moderner
+  Arbeitsmethoden}, \btxvolumeshort {.}~\btxvolumefont {27} \btxofseriesshort
+  {.}\ \btxtitlefont {Duden Taschenbücher}.
+\newblock \btxpublisherfont {Bibliographisches Institut}, Mannheim, 1997.
+
+\btxselectlanguage {english}
+\bibitem {Cochran95}
+\btxnamefont {\btxlastnamefont {Cochran},~S.\btxfnamespaceshort
+  D.}\btxauthorcolon\ \btxtitlefont {The {\tt subfigure} Package},
+  \btxprintmonthyear{.}{3}{1995}{short}.
+\newblock {\latintext
+  \btxurlfont{www.tex.ac.uk/tex-archive/macros/latex/contrib/supported/subfigure/subfigure.pdf}}.
+
+\btxselectlanguage {german}
+\bibitem {Eberl87}
+\btxnamefont {\btxlastnamefont {Eberl},~G.}\btxauthorcolon\ \btxtitlefont
+  {Automatischer Landeanflug durch Rechnersehen}.
+\newblock \btxphdthesis {}, Universität der Bundeswehr, Fakultät für Raum-
+  und Luftfahrttechnik, München, \btxprintmonthyear{.}{8}{1987}{short}.
+
+\btxselectlanguage {english}
+\bibitem {Faires34}
+\btxnamefont {\btxlastnamefont {Faires},~V.\btxfnamespaceshort
+  M.}\btxauthorcolon\ \btxtitlefont {Design of Machine Elements}.
+\newblock \btxpublisherfont {The Mac\-millan Com\-pany}, 1934.
+\newblock Originalausgabe 1920.
+
+\bibitem {Guttman01}
+\btxnamefont {\btxlastnamefont {Guttman},~E.}\btxauthorcolon\ \btxjtitlefont
+  {\btxifchangecase {Autoconfiguration for {IP} networking}{Autoconfiguration
+  for {IP} Networking}}.
+\newblock \btxjournalfont {IEEE Internet Computing}, 5:81--86,
+  \btxprintmonthyear{.}{5/6}{2001}{short}.
+
+\bibitem {Higham98}
+\btxnamefont {\btxlastnamefont {Higham},~N.\btxfnamespaceshort
+  J.}\btxauthorcolon\ \btxtitlefont {Handbook of Writing for the Mathematical
+  Sciences}.
+\newblock \btxpublisherfont {Society for Industrial and Applied Mathematics
+  (SIAM)}, Philadelphia, \btxnumeralshort {2}~\btxeditionshort {.}, 1998.
+\newblock {\latintext \btxurlfont{www.maths.manchester.ac.uk/~higham/hwms/}}.
+
+\bibitem {Kopka98}
+\btxnamefont {\btxlastnamefont {Kopka},~H.} \btxandshort {.}\ \btxnamefont
+  {P.\btxfnamespaceshort W. \btxlastnamefont {Daly}}\btxauthorcolon\
+  \btxtitlefont {A Guide to LaTeX}.
+\newblock \btxpublisherfont {Addison-Wesley}, Reading, MA, \btxnumeralshort
+  {3}~\btxeditionshort {.}, 1998.
+
+\btxselectlanguage {german}
+\bibitem {Kreisky75}
+\btxnamefont {\btxlastnamefont {Kreisky},~B.}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Kaffeehausgespräch zur lage der
+  nation}{Kaffeehausgespräch zur Lage der Nation}}.
+\newblock Persönl.\ Gespräch, \btxprintmonthyear{.}{11}{1975}{short}.
+
+\btxselectlanguage {english}
+\bibitem {Lamport94}
+\btxnamefont {\btxlastnamefont {Lamport},~L.}\btxauthorcolon\ \btxtitlefont
+  {{LaTeX}, A Document Preparation System}.
+\newblock \btxpublisherfont {Addison-Wesley}, Reading, MA, \btxnumeralshort
+  {2}~\btxeditionshort {.}, 1994.
+
+\btxselectlanguage {german}
+\bibitem {Lamport95}
+\btxnamefont {\btxlastnamefont {Lamport},~L.}\btxauthorcolon\ \btxtitlefont
+  {Das {LaTeX}-Handbuch}.
+\newblock \btxpublisherfont {Addison-Wesley}, Reading, MA, 1995.
+
+\btxselectlanguage {english}
+\bibitem {Mermin89}
+\btxnamefont {\btxlastnamefont {Mermin},~N.\btxfnamespaceshort
+  D.}\btxauthorcolon\ \btxjtitlefont {\btxifchangecase {What's wrong with these
+  equations?}{What's wrong with these equations?}}
+\newblock \btxjournalfont {Physics Today}, 42(10):9--11, 1989.
+
+\bibitem {Microsoft01}
+Microsoft Corporation\btxauthorcolon\ \btxtitlefont {Application Service
+  Providers: Evolution and Resources}, \btxprintmonthyear{.}{1}{2001}{short}.
+\newblock {\latintext \btxurlfont{www.microsoft.com/ISN/downloads/ASP.doc}},
+  Kopie auf CD-ROM.
+
+\btxselectlanguage {german}
+\bibitem {Nosferatu}
+\btxtitlefont {\btxifchangecase {Nosferatu---a symphony of
+  horrors}{Nosferatu---A Symphony of Horrors}}.
+\newblock Drehbuch/Regie: F. W. Murnau. Mit Max Schreck, Gustav von Wangenheim,
+  Greta Schröder, 1922.
+\newblock DVD, Film Preservation Associates, London (1991).
+
+\btxselectlanguage {english}
+\bibitem {Oetiker01}
+\btxnamefont {\btxlastnamefont {Oetiker},~T.}, \btxnamefont
+  {H.~\btxlastnamefont {Partl}}, \btxnamefont {I.~\btxlastnamefont
+  {Hyna}}\btxandcomma {} \btxandshort {.}\ \btxnamefont {E.~\btxlastnamefont
+  {Schlegl}}\btxauthorcolon\ \btxtitlefont {The Not So Short Introduction to
+  {LaTeX2e}}, \btxprintmonthyear{.}{4}{2001}{short}.
+\newblock {\latintext
+  \btxurlfont{www.tex.ac.uk/tex-archive/info/lshort/english/}}.
+
+\bibitem {Oostrum97}
+\btxnamefont {\btxlastnamefont {Oostrum},~P.}\btxauthorcolon\ \btxtitlefont
+  {Page layout in {LaTeX}}, \btxprintmonthyear{.}{5}{1997}{short}.
+\newblock {\latintext
+  \btxurlfont{www.tex.ac.uk/tex-archive/macros/latex/contrib/supported/fancyhdr/}}.
+
+\bibitem {Pakin01}
+\btxnamefont {\btxlastnamefont {Pakin},~S.}\btxauthorcolon\ \btxtitlefont {The
+  Comprehensive {LaTeX} Symbol List}, \btxprintmonthyear{.}{7}{2001}{short}.
+\newblock {\latintext
+  \btxurlfont{www.tex.ac.uk/tex-archive/info/symbols/comprehensive/symbols-a4.pdf}}.
+
+\bibitem {Patashnik88}
+\btxnamefont {\btxlastnamefont {Patashnik},~O.}\btxauthorcolon\ \btxtitlefont
+  {{BiBTeXing}}, \btxprintmonthyear{.}{2}{1988}{short}.
+\newblock {\latintext \btxurlfont{www.literateprogramming.com/btxdoc.pdf}}.
+
+\bibitem {Psycho}
+\btxtitlefont {\btxifchangecase {Psycho}{Psycho}}.
+\newblock Regie: Alfred Hitchcock. Drehbuch: Joseph Stefano. Nach dem Roman von
+  Robert Bloch. Mit Anthony Perkins, Vera Miles, Janet Leigh, 1960.
+\newblock DVD, Universal Pictures (2003).
+
+\btxselectlanguage {german}
+\bibitem {Schmidt01}
+\btxnamefont {\btxlastnamefont {Schmidt},~W.}, \btxnamefont
+  {J.~\btxlastnamefont {Knappen}}, \btxnamefont {H.~\btxlastnamefont
+  {Partl}}\btxandcomma {} \btxandshort {.}\ \btxnamefont {I.~\btxlastnamefont
+  {Hyna}}\btxauthorcolon\ \btxtitlefont {{LaTeX2e} Kurzbeschreibung},
+  \btxprintmonthyear{.}{6}{2001}{short}.
+\newblock {\latintext
+  \btxurlfont{www.tex.ac.uk/tex-archive/info/lshort/german/l2kurz.pdf}}.
+
+\bibitem {Sommerfeldt07}
+\btxnamefont {\btxlastnamefont {Sommerfeldt},~A.}\btxauthorcolon\ \btxtitlefont
+  {Setzen von Abbildungs- und Tabellenbeschriftungen mit dem {\tt
+  caption}-Paket}, \btxprintmonthyear{.}{4}{2007}{short}.
+\newblock {\latintext
+  \btxurlfont{www.tex.ac.uk/tex-archive/macros/latex/contrib/caption/anleitung.pdf}}.
+
+\btxselectlanguage {english}
+\bibitem {Taylor96}
+\btxnamefont {\btxlastnamefont {Taylor},~P.} \btxandshort {.}\ \btxnamefont
+  {M.~\btxlastnamefont {Dawson}}\btxauthorcolon\ \btxtitlefont {Bibliography
+  files in Hypatia}, \btxprintmonthyear{.}{6}{1996}{short}.
+\newblock {\latintext
+  \btxurlfont{http://hypatia.dcs.qmw.ac.uk/html/bibliography.html}}.
+
+\bibitem {mathmode09}
+\btxnamefont {\btxlastnamefont {Voß},~H.}\btxauthorcolon\ \btxtitlefont {Math
+  mode -- v.2.41}, 2009.
+\newblock {\latintext
+  \btxurlfont{http://ctan.tug.org/tex-archive/info/math/voss/mathmode/}}.
+
+\btxselectlanguage {german}
+\bibitem {Wintersberger00}
+\btxnamefont {\btxlastnamefont {Wintersberger},~M.}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {Realisierung eines internet-auktionshauses
+  basierend auf {PHP} und {MySQL}}{Realisierung eines Internet-Auktionshauses
+  basierend auf {PHP} und {MySQL}}}.
+\newblock \btxmastthesis {}, Fachhochschule Hagenberg, Medientechnik und
+  -design, Hagenberg, Austria, \btxprintmonthyear{.}{6}{2000}{short}.
+
+\btxselectlanguage {english}
+\bibitem {Zappa95}
+\btxnamefont {\btxlastnamefont {Zappa},~F.}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Freak out}{Freak Out}}.
+\newblock Audio-CD, Rykodisc, New York, \btxprintmonthyear{.}{5}{1995}{short}.
+
+\end{thebibliography}

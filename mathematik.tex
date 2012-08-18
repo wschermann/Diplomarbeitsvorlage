@@ -1,0 +1,378 @@
+\chapter[Mathem.\ Formeln etc.]{Mathematische Formeln, Gleichungen und Algorithmen}
+\label{chap:Mathematik}
+
+
+
+Das Formatieren von mathematischen Elementen gehört sicher zu den
+Stär\-ken von \latex. Man unterscheidet zwischen mathematischen Elementen
+im Fließtext und freistehenden Gleichungen, die in der Regel
+fortlaufend nummeriert werden. Analog zu Abbildungen und Tabellen sind dadurch
+Querverweise zu Gleichungen leicht zu realisieren.
+Hier nur einige Beispiele und spezielle Themen, vieles weitere dazu findet sich \zB in
+\cite[Kap.\ 5]{Kopka98} oder \cite{mathmode09}.
+
+
+\section{Mathematische Elemente im Fließtext}
+
+Mathematische Symbole, Ausdrücke, Gleichungen etc.\ werden im Fließtext durch paarweise \verb!$! \ldots \verb!$! markiert. Hier ein Beispiel:
+%
+\begin{quote}
+Der Nah-Unendlichkeitspunkt liegt bei
+$\bar{a} = f' \cdot \bigl( \frac{f'}{K \cdot u_{\max}} + 1 \bigr)$,
+sodass bei einem auf $\infty$ eingestellten Objektiv von der Entfernung
+$\bar{a}$ an alles scharf ist. Fokussiert man das
+Objektiv auf die Entfernung $\bar{a}$ (\dah, $a_0 = \bar{a}$), dann wird
+im Bereich $[\frac{\bar{a}}{2}, \infty]$ alles scharf.
+\end{quote}
+%
+Dabei sollte man unbedingt darauf achten, dass die Höhe der einzelnen Elemente im Text nicht zu groß wird. 
+
+\paragraph{Häufiger Fehler:} 
+Im Fließtext wird bei einfachen Variablen oft auf die Verwendung der richtigen, mathematischen Zeichen vergessen, wie etwa in 
+"`X-Achse"' anstelle von "`$X$-Achse"' (\verb!$X$-Achse!).
+
+
+
+\section{Freigestellte Ausdrücke}
+
+Freigestellte mathematische Ausdrücke können in \latex\ im einfachsten Fall durch paarweise \verb!$$! \ldots \verb!$$! erzeugt werden. Das Ergebnis wird zentriert, erhält jedoch keine Numerierung. So ist \zB\ $$ y = 4 x^2 $$ das Ergebnis von \verb!$$ y = 4 x^2 $$!.
+
+\subsection{Einfache Gleichungen} 
+
+Meistens verwendet man in solchen Fällen jedoch die \texttt{equation}-Umgebung zur Herstellung numerierter Gleichungen, auf die man im Text jederzeit verweisen kann. Zum Beispiel erzeugt
+%
+\begin{LaTeXCode}
+\begin{equation}
+  f(k) = \frac{1}{N} \sum_{i=0}^{k-1} i^2 . 
+  \label{eq:MyFirstEquation}
+\end{equation}
+\end{LaTeXCode}
+%
+die Gleichung
+%
+\begin{equation}
+  f(k) = \frac{1}{N} \sum_{i=0}^{k-1} i^2 . 
+\label{eq:MyFirstEquation}
+\end{equation}
+%
+Mit \verb!\ref{eq:MyFirstEquation}! erhält man wie üblich die Nummer (\ref{eq:MyFirstEquation}) dieser Gleichung (siehe dazu auch Abschn.\ \ref{sec:VerweiseAufGleichungen}). 
+Dieselbe Gleichung \emph{ohne} Numerierung kann man übrigens mit der \texttt{equation*}-Umgebung erzeugen.
+
+
+
+\begin{center}
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{2mm}
+\fbox{%
+\begin{minipage}{0.9\textwidth}
+Man beachte, dass \textbf{Gleichungen} inhaltlich ein \textbf{Teil des Texts} sind und daher neben der sprachliche \textbf{Überleitung} auch die \textbf{Punktuation} (wie in Gl.\ \ref{eq:MyFirstEquation} gezeigt) beachtet werden muss. Bei Unsicherheiten sollte man sich passende Beispiele in einem guten Mathematik\-buch ansehen.
+\end{minipage}}
+\end{center}
+%
+Für Interessierte findet sich mehr zum Thema Mathematik und Prosa in \cite{Mermin89} und \cite{Higham98}.
+
+\subsection{Mehrzeilige Gleichungen}
+
+Für mehrzeilige Gleichungen bietet \latex\ die 
+\verb!eqnarray!-Umgebung, die allerdings etwas eigenwillige Zwischenräume erzeugt.
+Es empfiehlt sich, dafür gleich auf die erweiterten Möglichkeiten des \texttt{amsmath}-Pakets%
+\footnote{American Mathematical Society (AMS). \texttt{amsmath} ist Teil der \latex\ Standardinstallation und wird von \texttt{htl.sty} bereits importiert.}
+\cite{amsldoc02} zurückzugreifen.
+Hier ein Beispiel mit zwei am \texttt{=}-Zeichen ausgerichteten Gleichungen,
+%
+\begin{align}
+f_1 (x,y) &= \frac{1}{1-x} + y , \label{eq:f1} \\
+f_2 (x,y) &= \frac{1}{1+y} - x , \label{eq:f2}
+\end{align}
+%
+erzeugt mit der \texttt{align}-Umgebung aus dem \texttt{amsmath}-Paket:
+%
+\begin{LaTeXCode}
+\begin{align}
+  f_1 (x,y) &= \frac{1}{1-x} + y , \label{eq:f1} \\
+  f_2 (x,y) &= \frac{1}{1+y} - x , \label{eq:f2}
+\end{align}
+\end{LaTeXCode}
+
+
+\subsection{Fallunterscheidungen}
+
+Mit der \texttt{cases}-Umgebung aus \texttt{amsmath} sind Fallunterscheidungen, \ua\ innerhalb von Funktionsdefinitionen, sehr einfach zu bewerkstelligen. Beispielsweise wurde die rekursive Definition
+%
+\begin{equation}
+\mathsf{H}(i) =
+\begin{cases}
+  \mathsf{h}(0)                 & \text{für $i = 0$},\\
+  \mathsf{H}(i-1) + \mathsf{h}(i) & \text{für $0 < i \leq K$}.
+\end{cases}
+\end{equation}
+mit folgenden Anweisungen erzeugt:
+%
+\begin{LaTeXCode}
+\begin{equation}
+\mathsf{H}(i) =
+\begin{cases}
+  \mathsf{h}(0) & \text{f"ur $i = 0$},\\
+  \mathsf{H}(i-1) + \mathsf{h}(i) & \text{f"ur $0 < i \leq K$}.
+\end{cases}
+\end{equation}
+\end{LaTeXCode}
+%
+Man beachte dabei die Verwendung des sehr praktischen \verb!\text{..}!-Makros, mit dem im Mathematik-Modus gewöhnlicher Text eingefügt werden kann, sowie wiederum die Punktuation innerhalb der Gleichung.
+
+\subsection{Gleichungen mit Matrizen}
+
+Auch hier bietet \texttt{amsmath} einige Vorteile gegenüber der Verwendung der \latex\ Standardkonstrukte. Dazu ein einfaches Beispiel für die Verwendung der \texttt{pmatrix}-Umgebung für Vektoren und Matrizen,
+%
+\begin{equation}
+\begin{pmatrix} x' \\ y' \end{pmatrix}
+= 
+\begin{pmatrix}
+  \cos \phi & -\sin \phi \\
+  \sin \phi & \phantom{-}\cos \phi
+\end{pmatrix} 
+\cdot
+\begin{pmatrix}	x \\ y \end{pmatrix} ,
+\end{equation}
+%
+das mit den folgenden Anweisungen erzeugt wurde:
+%
+\begin{LaTeXCode}
+\begin{equation}
+\begin{pmatrix} 
+		x' \\ 
+		y' 
+\end{pmatrix}
+= 
+\begin{pmatrix}
+	  \cos \phi & -\sin \phi \\
+	  \sin \phi & \phantom{-}\cos \phi /+ \label{lin:phantom} +/
+\end{pmatrix} 
+\cdot
+\begin{pmatrix} 
+		x \\ 
+		y 
+\end{pmatrix} ,
+\end{equation}
+\end{LaTeXCode}
+%
+Ein nützliches Detail darin ist das \tex-Makro \verb!\phantom{..}! (in Zeile \ref{lin:phantom}), das sein Argument unsichtbar einfügt und hier als Platzhalter für das darüberliegende Minuszeichen verwendet wird. Alternativ kann man mit der \texttt{bmatrix}-Umgebung Matrizen mit eckigen Klammern erzeugen.
+Zahlreiche weitere mathematische Konstrukte des \texttt{amsmath}-Pakets sind in \cite{amsldoc02} beschrieben.
+
+\begin{comment}
+% Umsetzung ohne amsmath:
+\begin{equation}
+\left[ \begin{array}{c}
+  x' \\ y'
+\end{array} \right] 
+= 
+\left[ \begin{array}{rr}
+	 \cos \phi & \sin \phi \\
+	-\sin \phi & \cos \phi
+\end{array} \right] 
+\cdot
+\left[ \begin{array}{c}
+	x \\ y
+\end{array}
+\right] 
+.
+\end{equation}
+\end{comment}
+
+
+
+\subsection{Verweise auf Gleichungen}
+\label{sec:VerweiseAufGleichungen}
+
+Beim Verweis auf nummerierte Formeln und Gleichungen genügt grundsätzlich die Angabe 
+der entsprechenden Nummer in runden Klammern,
+\zB\
+\begin{center}
+"`\ldots wie aus (\ref{eq:f1}) abgeleitet werden
+kann \ldots"'
+\end{center}
+Um Missverständnisse zu vermeiden, sollte man aber -- \va\ in Texten mit
+nur wenigen mathematischen Elementen -- "`Gleichung \ref{eq:f1}"', "`Gl.~\ref{eq:f1}"' oder "`Gl.~(\ref{eq:f1})"' schreiben (natürlich konsistent). 
+%\emph{Falsch} wäre hingegen "`Gleichung (\ref{eqn:zerstreuungskreis})"'.
+
+\begin{center}
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{2mm}
+\fbox{%
+\begin{minipage}{0.9\textwidth}
+\textbf{Achtung:} Vorwärtsverweise auf (im Text weiter hinten liegende) Gleichungen sind \textbf{äußerst ungewöhnlich} 
+und sollten vermieden werden! Glaubt man dennoch so etwas zu benötigen, dann wurde
+meistens ein Fehler in der Anordnung gemacht.
+\end{minipage}}
+\end{center}
+
+
+\section{Spezielle Symbole}
+
+\subsection{Zahlenmengen}
+Einige häufig verwendete Symbole sind leider im ursprünglichen
+mathematischen Zeichensatz von \latex nicht enthalten, \zB die
+Symbole für die reellen und natürlichen Zahlen. Im {\tt
+htl}-Paket sind diese Symbole als Makros \verb!\R! ($\R$),
+\verb!\Z! ($\Z$), \verb!\N! ($\N$), \verb!\C! ($\C$) und \verb!\Q!
+($\Q$)
+mithilfe der \emph{AMS Blackboard Fonts} definiert, \zB:
+\begin{center}
+$x \in \R$ , $i \in \N_0$, $z \in \C$.
+\end{center}
+
+
+\subsection{Operatoren}
+
+In \latex\ sind Dutzende von mathematischen Operatoren für spezielle Anwendungen definiert. Am häufigsten werden natürlich die arithmetischen Operatoren $+$, $-$, $\cdot$ und $/$ benötigt. Ein dabei oft beobachteter Fehler (der wohl aus der Programmierpraxis resultiert) ist die Verwendung von $*$ für die einfache Multiplikation -- richtig ist $\cdot$ (\verb!\cdot!).%
+\footnote{Das Zeichen $*$ wird üblicherweise für den Faltungsoperator verwendet.}
+%
+Für Angaben wie \zB\ "`ein Feld mit $25 \times 70$ Metern"' (aber auch fast \emph{nur} dafür) verwendet man sinnvollerweise den $\times$ (\verb!\times!) Operator und \emph{nicht} einfach den Buchstaben "`x"'.
+
+
+\subsection{Symbole mit mehreren Zeichen}
+Vor allem bei der mathematischen Spezifikation von Algorithmen und Programmen
+ist es häufig notwendig, Symbole (Variablennamen) mit mehr als einem Zeichen
+zu verwenden, \zB
+%
+$$Scalefactor\leftarrow Scalefactor^2 \cdot 1.5 \; ,$$
+%
+erzeugt durch \verb!$Scalefactor! \verb!\leftarrow! \verb!Scalefactor^2! \verb!\cdot 1.5$!.
+Dabei interpretiert \latex allerdings die Zeichenkette "`Scalefactor"' als 11 einzelne,
+aufeinanderfolgende Symbole $S$, $c$, $a$, $l$, $e$, \ldots und setzt dazwischen
+entsprechende Abstände.
+Richtig ist, diese Buchstaben mit
+\verb!\mathit{..}! zu \emph{einem} Symbol zusammenzufassen.
+Der Unterschied ist in diesem Fall deutlich sichtbar:
+%
+\begin{center}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llll}
+\text{Falsch:}   & $Scalefactor^2$ & $\leftarrow$ & \verb!$Scalefactor^2$! \\
+\text{Richtig:}  & $\mathit{Scalefactor}^2$ & $\leftarrow$ & \verb!$\mathit{Scalefactor}^2$!
+\end{tabular}
+\end{center}
+%
+Grundsätzlich sollte man aber derart lange Symbolnamen ohnehin vermeiden und stattdessen möglichst einzelne 
+Symbole verwenden
+(\zB\ Brennweite $f = 50 \, \mathrm{mm}$ statt $\mathit{Brennweite} = 50 \, \mathrm{mm}$).
+
+\subsection{Funktionen}
+
+Während Symbole für Variablen traditionell (und in \latex\ automatisch) \emph{italic} gesetzt werden,
+verwendet man für die Namen von Funktionen und Operatoren üblicherweise
+\emph{roman} als Schrifttyp, wie \zB in
+\begin{center}
+\begin{tabular}{lcl}
+$\sin \theta = \sin(\theta + 2 \pi)$ & & \verb!$\sin \theta = \sin(\theta + 2 \pi)$! \\
+\end{tabular}
+\end{center}
+Das ist bei den bereits vordefinierten Standardfunktionen (wie
+\verb!\sin!,
+\verb!\cos!,
+\verb!\tan!,
+\verb!\log!,
+\verb!\max!
+\uva) automatisch der Fall.
+Diese Konvention sollte man auch bei selbstdefinierten Funktionen befolgen,
+wie etwa in
+\begin{center}
+\begin{tabular}{lcl}
+$\mathrm{Distance}(A,B) = |A-B|$ & & \verb!$\mathrm{Distance}(A,B) = |A-B|$! \\
+\end{tabular}
+\end{center}
+
+
+\subsection{Maßeinheiten und Währungen}
+
+Bei der Angabe von Maßeinheiten wird üblicherweise Normalschrift
+(keine Italics) verwendet, \zB:
+\begin{quote}
+Die Höchstgeschwindigkeit der \textit{Bell XS-1} beträgt 345~m/s
+bei einem Startgewicht von 15~t. 
+Der Prototyp kostete über 25{\thinspace}000{\thinspace}000 US\$, also ca.\ 19{\thinspace}200{\thinspace}000 \euro\ nach heutiger Umrechnung.
+\end{quote}
+Der Abstand zwischen der Zahl und der Maßeinheit ist dabei
+gewollt.
+Das \$-Zeichen erzeugt man mit \verb!\$!, während
+das Euro-Symbol (\euro) nicht im ursprünglichen \latex-Zeichensatz enthalten ist. Es wird 
+durch das Makro \verb!\euro! %\footnote{Aus dem \texttt{eurosym}-Paket.}
+zur Verfügung gestellt.
+Die kleinen Abstände zwischen den Ziffernblöcken der Beträge wurden hier übrigens mit \verb!{\thinspace}! erzeugt.
+
+
+
+\subsection{Kommas in Dezimalzahlen (Mathematik-Modus)}
+
+\latex\ setzt im Mathematik-Modus (also innerhalb von \verb!$$! oder in Gleichungen) nach dem anglo-merikanischen Stil in Dezimalzahlen grundsätzlich den \emph{Punkt} (\verb!.!) als Trennsymbol voraus. So wird etwa mit \verb!$3.141$! normalerweise die Ausgabe "`3.141"' erzeugt. Um das in Europa übliche Komma in Dezimalzahlen zu verwenden, genügt es \emph{nicht}, einfach \verb!.! durch \verb!,! zu ersetzen. Letzteres würde als Satzzeichen interpretiert und sieht dann so aus:
+\begin{quote}
+\verb!$3,141$!	$\quad \rightarrow \quad 3,141$ 
+\end{quote}
+(beachte den Leerraum nach dem Komma). Dieses Verhalten lässt sich in \latex\ zwar global umdefinieren, was aber wiederum zu einer Reihe unangenehmer Nebeneffekte führt. Eine einfache (wenn auch nicht sehr elegante) Lösung ist, Kommazahlen im Mathematik-Modus so zu schreiben:
+\begin{quote}
+\verb!$3{,}141$!	$\quad \rightarrow \quad 3{,}141$
+\end{quote}
+
+
+
+\subsection{Mathematik-Werkzeuge}
+
+Für die Erstellung komplizierter Gleichungen ist es mitunter
+hilfreich, auf spezielle Software zurückzugreifen. Unter anderem kann man
+aus dem Microsoft \emph{Equation Editor} und aus {\em
+Mathematica} auf relativ einfache Weise \latex-An\-wei\-sun\-gen
+für mathematische Gleichungen exportieren und direkt (mit etwas
+manueller Nacharbeit) in das eigene \latex-Dokument übernehmen.
+
+
+\section{Algorithmen}
+
+Für die Beschreibung von Algorithmen in mathematischer Form oder
+Pseudo\-code ist in \latex selbst keine spezielle Unterstützung vorgesehen.
+Dazu gibt es jedoch eine Reihe von \latex-Paketen (\zB\ \texttt{algorithms}, 
+\texttt{algorithmicx}, \texttt{algorithm2e}).
+Das Beispiel in Alg.~\ref{alg:xyz} wurde mit der Float-Umgebung von \texttt{algorithm} und dem algorithmischen Schriftsatz aus \texttt{algorithmicx} ausgeführt.%
+\footnote{Hier wird \texttt{algorithmicx} \bzw\ \texttt{algpseudocode} in der älteren Version 1.1 verwendet (die zugehörigen \texttt{.sty}-Dateien liegen dieser Vorlage bei), weil die aktuelle Version (1.2) offenbar fehlerhaft ist. Als Alternative sollte man sich eventuell das \texttt{algorithm2e}-Paket ansehen.}
+Die grobe Struktur dieses Konstrukts ist
+%
+\begin{LaTeXCode}
+\begin{algorithm}
+\caption{Bikubische Interpolation in 2D.}
+\label{alg:xyz}
+\begin{algorithmic}[1] 
+  \Procedure{BicubicInterpolation}{$I, x_0, y_0$}
+  ...
+  \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+\end{LaTeXCode}
+
+Weitere Details finden sich im Quelltext und natürlich in der Dokumentation der verwendeten Pakete.
+Umfangreichere Beispiele für Algorithmen mit diesem Setup findet man \ua\ in \cite{BurgerBurge06}.
+
+
+\begin{algorithm}
+\caption{Bikubische Interpolation in 2D.}
+\label{alg:xyz}
+\smallskip
+%
+\begin{algorithmic}[1] % [1] heißt alle Zeilen werden numeriert
+\Procedure{BicubicInterpolation}{$I, x_0, y_0$} \Comment{$x_0,y_0 \in \R$}
+\Statex{Returns the interpolated value of the image $I$ 
+        at the continuous position $(x_0, y_0)$.}
+\State $q \gets 0$
+\For{$j \gets 0 \ldots 3$} \Comment{iterate over 4 lines}
+	\State $v \gets \lfloor y_0 \rfloor - 1 + j$
+	\State $p \gets 0$ 
+	\For{$i \gets 0 \ldots 3$} \Comment{iterate over 4 columns}
+	  \State $u \gets \lfloor x_0 \rfloor - 1 + i$
+	  \State $p \gets p + I(u,v) \cdot w_{\mathrm{cub}}(x_0 - u )$ 
+	\EndFor
+	\State $q \gets q + p \cdot w_{\mathrm{cub}}(y_0 - v)$
+\EndFor
+\State \textbf{return} $q$.
+\EndProcedure
+\end{algorithmic}%
+\smallskip
+%
+\end{algorithm}

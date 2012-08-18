@@ -1,0 +1,94 @@
+\documentclass[german]{htldipl}
+% Zulässige Class Options: 
+%   Hauptsprache: german (default), english
+
+% die folgende Zeile einkommentieren für Arial-Ähnliche Schriftart
+%\renewcommand{\familydefault}{\sfdefault}
+
+\graphicspath{{images/}}    % wo liegen die Bilder?
+
+%%%----------------------------------------------------------
+\begin{document}
+%%%----------------------------------------------------------
+
+\title{Entwurf eines Versuchstandes für Kreiselpumpen}
+\abteilung{Maschineningenieurwesen}
+\schwerpunkt{Automatisierungstechnik}
+\studienort{Wiener Neustadt}
+\schule{HTBLuVA Wiener Neustadt}
+\schullogo{htl.png}
+\abgabejahr{2010/11}
+\betreuerA{Dr.\ Walter Turbo}
+\betreuerB{Dipl.-Ing.\ Hans Kreisel}
+\betreuerC{Kurt Heidenheim}
+\betreuerD{Ing.\ Reiner Tischler}
+\betreuerE{Werner Ingolson}
+%\betreuerE{} oder leer lassen wenn nicht vorhanden
+\schuelerA{Maximilian MAIER}
+\evidenzA{5AHMIA-17}
+\schuelerB{Elisabeth MUSTER}
+\evidenzB{5AHMIA-19}
+\schuelerC{Peter ZAPFEL}
+\evidenzC{5AHMIA-24}
+\schuelerD{Otto BAUER}
+\evidenzD{5BHMIA-02}
+\schuelerE{Elfriede NURNBERG-ATTACH}
+\evidenzE{5BHMIA-20}
+\schuelerF{Kelvin RIDL}
+\evidenzF{5BHMIA-27}
+\schuelerG{Udo HAUSBAUER}
+\evidenzG{5CHMIA-11}
+%\schuelerG{} oder leer lassen wenn nicht vorhanden
+%\evidenzG{} oder leer lassen wenn nicht vorhanden
+
+%%%----------------------------------------------------------
+\frontmatter
+\maketitle
+\tableofcontents
+%%%----------------------------------------------------------
+
+\include{vorwort}				%ggfs. weglassen
+\include{kurzfassung}		
+\include{abstract}			
+
+%%%----------------------------------------------------------
+\mainmatter           %Hauptteil (ab hier arab. Seitenzahlen)
+%%%----------------------------------------------------------
+
+\include{einleitung}
+\include{diplomschrift}
+\include{latex}
+\include{abbildungen}
+\include{mathematik}
+\include{literatur}
+\include{drucken}
+\include{word}
+\include{schluss}
+
+%%%----------------------------------------------------------
+%%%Anhang
+\appendix
+\include{anhang_a}	% Technische Ergänzungen
+\include{anhang_b}	% Inhalt der CD-ROM/DVD
+\include{anhang_c}	% Chronologische Liste der Änderungen
+\include{anhang_d}	% Quelltext dieses Dokuments
+
+%%%----------------------------------------------------------
+
+%Literaturverzeichnis
+\clearpage
+\addcontentsline{toc}{chapter}{\bibname}
+
+\bibliographystyle{bababbrv} 
+%options: babplain, babunsrt, bababbrv, babalpha 
+%         babplain-fl etc: first/lastname 
+%         babplain-lf etc: last/firstname
+\bibliography{literatur}     %BibTeX-Datei literatur.bib
+
+
+%%%----------------------------------------------------------
+
+%%%Messbox zur Druckkontrolle
+\include{messbox}
+
+\end{document}
