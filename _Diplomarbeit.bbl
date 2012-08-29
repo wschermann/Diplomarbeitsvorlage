@@ -100,8 +100,8 @@ American Mathematical Society\btxauthorcolon\ \btxtitlefont {User's Guide for
 \btxnamefont {\btxlastnamefont {Burger},~W.} \btxandshort {.}\ \btxnamefont
   {M.~\btxlastnamefont {Burge}}\btxauthorcolon\ \btxtitlefont {Digitale
   Bildverarbeitung -- Eine Einführung mit Java und ImageJ}.
-\newblock \btxpublisherfont {Springer-Verlag}, Heidelberg, \btxnumeralshort
-  {2}~\btxeditionshort {.}, 2006.
+\newblock \btxpublisherfont {Springer-Verlag}, Heidelberg, \btxeditionnumshort
+  {2}{.}, 2006.
 
 \btxselectlanguage {english}
 \bibitem {Carlisle99}
@@ -154,15 +154,15 @@ American Mathematical Society\btxauthorcolon\ \btxtitlefont {User's Guide for
   J.}\btxauthorcolon\ \btxtitlefont {Handbook of Writing for the Mathematical
   Sciences}.
 \newblock \btxpublisherfont {Society for Industrial and Applied Mathematics
-  (SIAM)}, Philadelphia, \btxnumeralshort {2}~\btxeditionshort {.}, 1998.
+  (SIAM)}, Philadelphia, \btxeditionnumshort {2}{.}, 1998.
 \newblock {\latintext \btxurlfont{www.maths.manchester.ac.uk/~higham/hwms/}}.
 
 \bibitem {Kopka98}
 \btxnamefont {\btxlastnamefont {Kopka},~H.} \btxandshort {.}\ \btxnamefont
   {P.\btxfnamespaceshort W. \btxlastnamefont {Daly}}\btxauthorcolon\
   \btxtitlefont {A Guide to LaTeX}.
-\newblock \btxpublisherfont {Addison-Wesley}, Reading, MA, \btxnumeralshort
-  {3}~\btxeditionshort {.}, 1998.
+\newblock \btxpublisherfont {Addison-Wesley}, Reading, MA, \btxeditionnumshort
+  {3}{.}, 1998.
 
 \btxselectlanguage {german}
 \bibitem {Kreisky75}
@@ -175,8 +175,8 @@ American Mathematical Society\btxauthorcolon\ \btxtitlefont {User's Guide for
 \bibitem {Lamport94}
 \btxnamefont {\btxlastnamefont {Lamport},~L.}\btxauthorcolon\ \btxtitlefont
   {{LaTeX}, A Document Preparation System}.
-\newblock \btxpublisherfont {Addison-Wesley}, Reading, MA, \btxnumeralshort
-  {2}~\btxeditionshort {.}, 1994.
+\newblock \btxpublisherfont {Addison-Wesley}, Reading, MA, \btxeditionnumshort
+  {2}{.}, 1994.
 
 \btxselectlanguage {german}
 \bibitem {Lamport95}
