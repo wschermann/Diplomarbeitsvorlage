@@ -4,7 +4,7 @@
 %% Ursprünglicher Autor: Wilhelm Burger (wilhelm.burger@fh-hagenberg.at)
 
 \NeedsTeXFormat{LaTeX2e}
-\newcommand{\htldiplDate}{2010/11/22} %Versionsdatum
+\newcommand{\htldiplDate}{2015/07/09} %Versionsdatum
 \ProvidesClass{htldipl}[\htldiplDate\space LaTeX-Vorlage fuer Diplomarbeiten
 der HTL Wiener Neustadt]
 
@@ -13,6 +13,7 @@ der HTL Wiener Neustadt]
 \RequirePackage{ifthen}
 
 \newcommand{\htl@MainLanguage}{german}	% also referenced in htl.sty
+\newcommand{\htl@DoubleSided}{oneside}
 \newcommand{\@datitelseiten}{}
 \newcommand{\@maketitlepages}{\@datitelseiten}  %default: Diplomarbeit
 
@@ -21,15 +22,23 @@ der HTL Wiener Neustadt]
 \DeclareOption{diplom}{\renewcommand{\@maketitlepages}{\@datitelseiten}}
 \DeclareOption{english}{\renewcommand{\htl@MainLanguage}{english}}
 \DeclareOption{german}{\renewcommand{\htl@MainLanguage}{german}}
+\DeclareOption{oneside}{\renewcommand{\htl@DoubleSided}{oneside}}
+\DeclareOption{twoside}{\renewcommand{\htl@DoubleSided}{twoside}}
 \DeclareOption*{\ClassWarning{htldipl}{Unknown document option
 "\CurrentOption"}}
 \ProcessOptions
 %% end class options ---------------------------------------------
  
-\LoadClass[a4paper,11pt,oneside]{book}
- 
-\RequirePackage{htl}[2010/11/22]	% load associated style file htl.sty
+\ifthenelse{\equal{\htl@DoubleSided}{oneside}}%
+	{\LoadClass[a4paper,11pt,oneside]{book} }{}
+\ifthenelse{\equal{\htl@DoubleSided}{twoside}}%
+	{\LoadClass[a4paper,11pt,twoside]{book}%
+	 \RequirePackage{emptypage}}{}
 
+ 
+\RequirePackage{htl}[2015/07/09]	% load associated style file htl.sty
+
+\RequirePackage[xindy, toc]{glossaries}
 
 %-------------- Setup für Seiten im Front-Teil --------------------
 

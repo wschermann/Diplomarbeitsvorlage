@@ -75,11 +75,12 @@ MikTeX enthält auch alle notwendigen Hilfsprogramme, wie beispielsweise {\tt bi
 Grundsätzlich kann man jeden Text-Editor%
 \footnote{Unter Windows \zB\ \emph{Ultra\-Edit} (\url{http://www.ultraedit.com})
 oder \emph{WinEdit} (\url{http://www.winedit.com}).} verwenden, praktischer ist jedoch eine integrierte \latex-Umgebung wie TeXnicCenter, die einen auch bei 
-der Dateiverwaltung, der Verarbeitung der Dokumente und der Fehlerbehandlung unterstützt. Für diese Vorlage wird mindestens die Version 2.0 benötigt, da sonst keine Unicode Unterstützung gegeben ist.\footnote{Zur Zeit ist erst eine Alpha Version erhältlich: \url{http://www.texniccenter.org/news/149-texniccenter-20-alpha-3}}
+der Dateiverwaltung, der Verarbeitung der Dokumente und der Fehlerbehandlung unterstützt. Für diese Vorlage wird mindestens die Version 2.0 benötigt, da sonst keine Unicode Unterstützung gegeben ist.\footnote{\url{http://www.texniccenter.org}}
 %
 \end{itemize}
 Beim erstem Mal sollten \emph{MikTeX} und \emph{TeXnicCenter} in genau dieser Reihenfolge installiert werden.
 
+MikTeX sollte so eingerichtet werden, dass fehlende Packete automatisch geladen werden. Beim ersten Erstellen werden dann alle notwendigen Packete aus dem Internet geladen und stehen ab dann lokal zur Verfügung. Das erste Erstellen dauert dadurch allerdings mitunter sehr lange. Sollten trotzdem noch fehlende Packete wie \zB\ \emph{tracklang.sty} angezeigt werden, so muss noch MikTeX aktualiert werden. Update (Admin) im Startmenü von MikTeX unter Maintenance. Das Programm wählt automatisch die richtigen Packete zur Aktualisierung aus.
 
 \subsubsection{Mac~OS}
 
@@ -112,8 +113,7 @@ Plugin).
 
 Zum Nachinstallieren zusätzlicher \latex-Pakete die nicht in der
 Standardinstallation enthalten sind gibt es für Linux ebenfalls den MikTeX
-Package
-Manager\footnote{\url{http://wiki.ubuntuusers.de/MiKTeX_Package_Manager}}.
+Package Manager\footnote{\url{http://wiki.ubuntuusers.de/MiKTeX_Package_Manager}}. Allerdings empfiehlt es sich meist die notwendigen Packete statt dessen über die Softwareverwaltung der Linux-Distribution zu installieren. So kann \zB\ in Ubuntu das Packet \emph{texlive-lang-german} installiert werden um die für diese Vorlage notwendige Unterstützung der deutschen Sprache nachzuinstallieren.
 
 \subsubsection{Automatische Generierung von \latex-Code}
 Bei der Erstellung von komplizierterem \latex-Code kann man sich zum Glück

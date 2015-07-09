@@ -7,6 +7,6 @@ MainFile=_Diplomarbeit.tex
 UseBibTeX=1
 UseMakeIndex=1
 ActiveProfile=LaTeX ⇨ PDF
-ProjectLanguage=
-ProjectDialect=
+ProjectLanguage=en
+ProjectDialect=US
 

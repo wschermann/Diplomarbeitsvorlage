@@ -175,3 +175,4 @@ pip-log.txt
 *.blg
 *.out
 *.tps
+*.dvi
