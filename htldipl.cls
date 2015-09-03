@@ -38,7 +38,7 @@ der HTL Wiener Neustadt]
  
 \RequirePackage{htl}[2015/07/09]	% load associated style file htl.sty
 
-\RequirePackage[xindy, toc]{glossaries}
+\RequirePackage[toc]{glossaries}
 
 %-------------- Setup für Seiten im Front-Teil --------------------
 
