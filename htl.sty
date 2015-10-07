@@ -5,7 +5,7 @@
 
 
 \NeedsTeXFormat{LaTeX2e}
-\newcommand{\htlDate}{2015/07/09}			%Versionsdatum
+\newcommand{\htlDate}{2015/10/07}			%Versionsdatum
 \ProvidesPackage{htl}[\htlDate]
 
 % options german/english are passed from the class file
@@ -298,11 +298,12 @@ H\"ohe $ = #2 {\rm\ mm}$
 \color{black}
 \newcommand{\@MissingArg}[1]{\textcolor{red}{#1}}
 
-\RequirePackage{listings2}
+\RequirePackage{listingsutf8}
 
 \lstset{
 %language=Java,%
 basicstyle=\ttfamily\footnotesize,%
+inputencoding=utf8/latin1,
 keywordstyle=,%\ttfamily,%\bfseries,
 identifierstyle=,%\sffamily, %\bfseries
 commentstyle=\normalfont\itshape,%
@@ -326,6 +327,20 @@ mathescape=false,	%set false by default?
 upquote=true,%
 keepspaces=true,%
 }
+
+\ifthenelse{\equal{\htl@Colorcode}{color}}%
+{
+\definecolor{htlgreen}{rgb}{0,0.6,0}
+\definecolor{htlgray}{rgb}{0.5,0.5,0.5}
+\definecolor{htlmauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  commentstyle=\color{htlgreen},    % comment style
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{htlmauve},     % string literal style
+}
+}{}
 
 \lstnewenvironment{JavaCode}	% code environment for Java 
 {\lstset{%

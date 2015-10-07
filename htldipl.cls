@@ -14,6 +14,7 @@ der HTL Wiener Neustadt]
 
 \newcommand{\htl@MainLanguage}{german}	% also referenced in htl.sty
 \newcommand{\htl@DoubleSided}{oneside}
+\newcommand{\htl@Colorcode}{color}
 \newcommand{\@datitelseiten}{}
 \newcommand{\@maketitlepages}{\@datitelseiten}  %default: Diplomarbeit
 
@@ -24,6 +25,8 @@ der HTL Wiener Neustadt]
 \DeclareOption{german}{\renewcommand{\htl@MainLanguage}{german}}
 \DeclareOption{oneside}{\renewcommand{\htl@DoubleSided}{oneside}}
 \DeclareOption{twoside}{\renewcommand{\htl@DoubleSided}{twoside}}
+\DeclareOption{color}{\renewcommand{\htl@Colorcode}{color}}
+\DeclareOption{black}{\renewcommand{\htl@Colorcode}{black}}
 \DeclareOption*{\ClassWarning{htldipl}{Unknown document option
 "\CurrentOption"}}
 \ProcessOptions
@@ -77,11 +80,6 @@ der HTL Wiener Neustadt]
 	\renewcommand{\@betreuerD}{#1}
 }
 
-\newcommand{\@betreuerE}{\@MissingArg{BetreuerE??}}
-\newcommand{\betreuerE}[1]{%
-	\renewcommand{\@betreuerE}{#1}
-}
-
 \newcommand{\@gegenstand}{\@MissingArg{Gegenstand??}}
 \newcommand{\gegenstand}[1]{%
 	\renewcommand{\@gegenstand}{#1}
@@ -127,15 +125,6 @@ der HTL Wiener Neustadt]
 	\renewcommand{\@schuelerE}{#1}
 }
 
-\newcommand{\@schuelerF}{\@MissingArg{SchuelerF??}}
-\newcommand{\schuelerF}[1]{%
-	\renewcommand{\@schuelerF}{#1}
-}
-
-\newcommand{\@schuelerG}{\@MissingArg{SchuelerG??}}
-\newcommand{\schuelerG}[1]{%
-	\renewcommand{\@schuelerG}{#1}
-}
 
 \newcommand{\@evidenzA}{\@MissingArg{EvidenzA??}}
 \newcommand{\evidenzA}[1]{%
@@ -162,29 +151,56 @@ der HTL Wiener Neustadt]
 	\renewcommand{\@evidenzE}{#1}
 }
 
-\newcommand{\@evidenzF}{\@MissingArg{EvidenzF??}}
-\newcommand{\evidenzF}[1]{%
-	\renewcommand{\@evidenzF}{#1}
+
+
+\newcommand{\@subthemaA}{\@MissingArg{SubthemaA??}}
+\newcommand{\subthemaA}[1]{%
+	\renewcommand{\@subthemaA}{#1}
 }
 
-\newcommand{\@evidenzG}{\@MissingArg{EvidenzG??}}
-\newcommand{\evidenzG}[1]{%
-	\renewcommand{\@evidenzG}{#1}
+\newcommand{\@subthemaB}{\@MissingArg{SubthemaB??}}
+\newcommand{\subthemaB}[1]{%
+	\renewcommand{\@subthemaB}{#1}
+}
+
+\newcommand{\@subthemaC}{\@MissingArg{SubthemaC??}}
+\newcommand{\subthemaC}[1]{%
+	\renewcommand{\@subthemaC}{#1}
+}
+
+\newcommand{\@subthemaD}{\@MissingArg{SubthemaD??}}
+\newcommand{\subthemaD}[1]{%
+	\renewcommand{\@subthemaD}{#1}
+}
+
+\newcommand{\@subthemaE}{\@MissingArg{SubthemaE??}}
+\newcommand{\subthemaE}[1]{%
+	\renewcommand{\@subthemaE}{#1}
 }
 
 %------------------ Titelseite -------------------
 
 \newcommand{\@datitel}{%
 \begin{titlepage}%
-\rule{0mm}{1mm}
-\includegraphics[height=30px]{\@schullogo}\hfill\includegraphics[height=30px]{htl_allgemein.jpg}
+	\begin{center}%
+	\parbox[b][4cm]{3cm}{
+	\includegraphics[width=30mm]{\@schullogo}
+	}
+	\parbox[b][4cm]{8.5cm}{
+  		\centering\Large\@schule
+  		\vskip 0mm%
+  		\small{Höhere Lehranstalt für \@abteilung}
+  		\vskip 0mm%
+  		{\@schwerpunkt}
+	}%
+	\parbox[b][4cm]{3cm}{
+  	\includegraphics[width=30mm]{htl_allgemein.jpg}
+  	}
+\end{center}
+\rule{\textwidth}{1pt}
 \begin{center}%
   \setlength{\unitlength}{1cm}
-  	{\Large\@schule}
-  	\vskip 0mm%
-  	{Höhere Lehranstalt für \@abteilung}
-  	\vskip 0mm%
-  	{Ausbildungsschwerpunkt \@schwerpunkt}
+  	
   	\vskip 10mm%
     {\Huge\bf D\,I\,P\,L\,O\,M\,A\,R\,B\,E\,I\,T}%
     \vskip 10mm%
@@ -192,17 +208,24 @@ der HTL Wiener Neustadt]
   		\put(0,1.8){\parbox{12cm}{\centering\huge\bf\setlength{\baselineskip}{20pt}\@title}}
   	\end{picture}
 \end{center}
-\vskip 10mm%
+\vskip 0mm%
     {\large\bf Ausgeführt im Schuljahr \@abgabejahr\ von:} 
     \begin{tabbing}
     \hspace*{1cm}\=\hspace*{8cm}\=\hspace*{5cm}\= \kill
+	\> \@subthemaA  \> \\    
     	\> \@schuelerA \> \@evidenzA \\
+    	\\
+    	\> \@subthemaB  \> \\  
     	\> \@schuelerB \> \@evidenzB \\ 
+    	\\
+    	\> \@subthemaC  \> \\  
     	\> \@schuelerC \> \@evidenzC \\ 
+    	\\
+    	\> \@subthemaD  \> \\  
     	\> \@schuelerD \> \@evidenzD \\ 
+    	\\
+    	\> \@subthemaE  \> \\  
     	\> \@schuelerE \> \@evidenzE \\ 
-    	\> \@schuelerF \> \@evidenzF \\ 
-    	\> \@schuelerG \> \@evidenzG \\ 
     \end{tabbing}
     {\large\bf Betreuer / Betreuerin:}
     \begin{tabbing}
@@ -210,8 +233,6 @@ der HTL Wiener Neustadt]
     	\> \@betreuerA \\
     	\> \@betreuerB \\ 
     	\> \@betreuerC \\ 
-    	\> \@betreuerD \\ 
-    	\> \@betreuerE \\ 
     \end{tabbing}
     {\large \@studienort, am \today}%
   \par\vfil\null
@@ -270,12 +291,7 @@ Quellen und Hilfsmittel nicht benutzt und die den benutzten Quellen wörtlich un
     	\\
     	\\
     	\\
-    	\@schuelerE \> \@schuelerF \\ 
-    	\\ 
-    	\\
-    	\\
-    	\\
-    	\@schuelerG \\ 
+    	\@schuelerE \>  \\ 
     \end{tabbing}
 }
 
