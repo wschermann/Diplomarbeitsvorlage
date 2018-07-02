@@ -1,0 +1,50 @@
+\usepackage[paper=a4paper,margin=3cm]{geometry}
+
+\makeindex[title=Index]
+\makeindex[name=allgemein, title=Allgemeiner Index]
+\makeindex[name=name,title={Autoren Index}]
+\makeindex[name=title,columns=1,title={Literatur Index}]
+\indexsetup{level=\subsection*, toclevel=subsection, noclearpage}
+
+
+\makeatletter
+\@ifpackageloaded{biblatex_legacy}
+  {\DeclareIndexNameFormat{default}{%
+     \usebibmacro{index:name}{\index[name]}{#1}{#3}{#5}{#7}}}
+  {\DeclareIndexNameFormat{default}{%
+     \usebibmacro{index:name}{\index[name]}
+       {\namepartfamily}
+       {\namepartgiven}
+       {\namepartprefix}
+       {\namepartsuffix}}}
+\makeatother
+
+\DeclareIndexFieldFormat{indextitle}{%
+  \usebibmacro{index:title}{\index[title]}{#1}}
+
+\renewbibmacro*{bibindex}{%
+  \ifbibindex
+    {\indexnames{author}%
+     \indexnames{editor}%
+     \indexnames{translator}%
+     \indexnames{commentator}%
+     \indexfield{indextitle}}
+    {}}
+
+\makeatletter
+\DeclareCiteCommand{\repeatfootcite}[\cbx@wrap]
+  {\gdef\cbx@keys{}}
+  {\xappto\cbx@keys{\thefield{entrykey},}}
+  {}
+  {\ifcsundef{cbx@lastin@\cbx@keys @\strfield{postnote}}
+     {\csnumgdef{cbx@lastin@\cbx@keys @\strfield{postnote}}{-1}}{}%
+   \ifsamepage{\value{instcount}}{\csuse{cbx@lastin@\cbx@keys @\strfield{postnote}}}
+     {\footnotemark[\csuse{cbx@lastfn@\cbx@keys @\strfield{postnote}}]}
+     {\xappto\cbx@cite{\noexpand\footcite%
+        [\thefield{prenote}][\thefield{postnote}]{\cbx@keys}%
+        \csnumgdef{cbx@lastfn@\cbx@keys @\strfield{postnote}}{\value{\@mpfn}}%
+        \csnumgdef{cbx@lastin@\cbx@keys @\strfield{postnote}}{\value{instcount}}}}}
+
+\newrobustcmd{\cbx@wrap}[1]{#1\cbx@cite\gdef\cbx@cite{}}
+\def\cbx@cite{}
+\makeatother

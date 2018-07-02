@@ -9,7 +9,7 @@ im Fließtext und freistehenden Gleichungen, die in der Regel
 fortlaufend nummeriert werden. Analog zu Abbildungen und Tabellen sind dadurch
 Querverweise zu Gleichungen leicht zu realisieren.
 Hier nur einige Beispiele und spezielle Themen, vieles weitere dazu findet sich \zB in
-\cite[Kap.\ 5]{Kopka98} oder \cite{mathmode09}.
+\citetitle{Kopka98}\footcite[Kap.\ 5]{Kopka98} oder \citetitle{mathmode09}\footcite{mathmode09}.
 
 
 \section{Mathematische Elemente im Fließtext}
@@ -69,7 +69,7 @@ Man beachte, dass \textbf{Gleichungen} inhaltlich ein \textbf{Teil des Texts} si
 \end{minipage}}
 \end{center}
 %
-Für Interessierte findet sich mehr zum Thema Mathematik und Prosa in \cite{Mermin89} und \cite{Higham98}.
+Für Interessierte findet sich mehr zum Thema Mathematik und Prosa in \citetitle{Mermin89}\footcite{Mermin89} und \citetitle{Higham98}\footcite{Higham98}.
 
 \subsection{Mehrzeilige Gleichungen}
 
@@ -77,7 +77,7 @@ Für mehrzeilige Gleichungen bietet \latex\ die
 \verb!eqnarray!-Umgebung, die allerdings etwas eigenwillige Zwischenräume erzeugt.
 Es empfiehlt sich, dafür gleich auf die erweiterten Möglichkeiten des \texttt{amsmath}-Pakets%
 \footnote{American Mathematical Society (AMS). \texttt{amsmath} ist Teil der \latex\ Standardinstallation und wird von \texttt{htl.sty} bereits importiert.}
-\cite{amsldoc02} zurückzugreifen.
+\footcite{amsldoc02} zurückzugreifen.
 Hier ein Beispiel mit zwei am \texttt{=}-Zeichen ausgerichteten Gleichungen,
 %
 \begin{align}
@@ -157,7 +157,7 @@ das mit den folgenden Anweisungen erzeugt wurde:
 \end{LaTeXCode}
 %
 Ein nützliches Detail darin ist das \tex-Makro \verb!\phantom{..}! (in Zeile \ref{lin:phantom}), das sein Argument unsichtbar einfügt und hier als Platzhalter für das darüberliegende Minuszeichen verwendet wird. Alternativ kann man mit der \texttt{bmatrix}-Umgebung Matrizen mit eckigen Klammern erzeugen.
-Zahlreiche weitere mathematische Konstrukte des \texttt{amsmath}-Pakets sind in \cite{amsldoc02} beschrieben.
+Zahlreiche weitere mathematische Konstrukte des \texttt{amsmath}-Pakets sind in \citetitle{amsldoc02}\footcite{amsldoc02} beschrieben.
 
 \begin{comment}
 % Umsetzung ohne amsmath:
@@ -348,7 +348,7 @@ Die grobe Struktur dieses Konstrukts ist
 \end{LaTeXCode}
 
 Weitere Details finden sich im Quelltext und natürlich in der Dokumentation der verwendeten Pakete.
-Umfangreichere Beispiele für Algorithmen mit diesem Setup findet man \ua\ in \cite{BurgerBurge06}.
+Umfangreichere Beispiele für Algorithmen mit diesem Setup findet man \ua\ in \citetitle{BurgerBurge06}\footcite{BurgerBurge06}.
 
 
 \begin{algorithm}

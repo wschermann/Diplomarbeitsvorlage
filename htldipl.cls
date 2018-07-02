@@ -4,13 +4,14 @@
 %% Ursprünglicher Autor: Wilhelm Burger (wilhelm.burger@fh-hagenberg.at)
 
 \NeedsTeXFormat{LaTeX2e}
-\newcommand{\htldiplDate}{2015/07/09} %Versionsdatum
+\newcommand{\htldiplDate}{2018/07/01} %Versionsdatum
 \ProvidesClass{htldipl}[\htldiplDate\space LaTeX-Vorlage fuer Diplomarbeiten
 der HTL Wiener Neustadt]
 
 \author{ }
 
 \RequirePackage{ifthen}
+\RequirePackage{pdfpages}
 
 \newcommand{\htl@MainLanguage}{german}	% also referenced in htl.sty
 \newcommand{\htl@DoubleSided}{oneside}
@@ -183,25 +184,30 @@ der HTL Wiener Neustadt]
 \newcommand{\@datitel}{%
 \begin{titlepage}%
 	\begin{center}%
-	\parbox[b][4cm]{3cm}{
-	\includegraphics[width=30mm]{\@schullogo}
-	}
-	\parbox[b][4cm]{8.5cm}{
-  		\centering\Large\@schule
-  		\vskip 0mm%
-  		\small{Höhere Lehranstalt für \@abteilung}
-  		\vskip 0mm%
-  		{\@schwerpunkt}
-	}%
-	\parbox[b][4cm]{3cm}{
-  	\includegraphics[width=30mm]{htl_allgemein.jpg}
-  	}
-\end{center}
-\rule{\textwidth}{1pt}
+		\raisebox{35mm}[\height][\depth]{
+			\parbox[b][4cm]{3cm}{
+				\includegraphics[width=30mm]{\@schullogo}
+			}
+			\parbox[b][4cm]{8.5cm}{
+  				\centering\Large\@schule
+  				\vskip 0mm%
+  				\small{Höhere Lehranstalt für \@abteilung}
+  				\vskip 0mm%
+  				{\@schwerpunkt}
+			}%
+			\parbox[b][4cm]{3cm}{
+  				\includegraphics[width=30mm]{htl_allgemein.jpg}
+  			}
+  		}
+	\end{center}
+	\begin{center}%
+		\raisebox{4cm}[\height][\depth]{
+			\rule{\textwidth}{1pt}
+		}
+	\end{center}
 \begin{center}%
   \setlength{\unitlength}{1cm}
-  	
-  	\vskip 10mm%
+  \vskip -30mm%
     {\Huge\bf D\,I\,P\,L\,O\,M\,A\,R\,B\,E\,I\,T}%
     \vskip 10mm%
   	\begin{picture}(12,4)
@@ -210,23 +216,20 @@ der HTL Wiener Neustadt]
 \end{center}
 \vskip 0mm%
     {\large\bf Ausgeführt im Schuljahr \@abgabejahr\ von:} 
-    \begin{tabbing}
-    \hspace*{1cm}\=\hspace*{8cm}\=\hspace*{5cm}\= \kill
-	\> \@subthemaA  \> \\    
-    	\> \@schuelerA \> \@evidenzA \\
-    	\\
-    	\> \@subthemaB  \> \\  
-    	\> \@schuelerB \> \@evidenzB \\ 
-    	\\
-    	\> \@subthemaC  \> \\  
-    	\> \@schuelerC \> \@evidenzC \\ 
-    	\\
-    	\> \@subthemaD  \> \\  
-    	\> \@schuelerD \> \@evidenzD \\ 
-    	\\
-    	\> \@subthemaE  \> \\  
-    	\> \@schuelerE \> \@evidenzE \\ 
-    \end{tabbing}
+    
+    \begin{tabular*}{0.9\textwidth}{@{\extracolsep{\fill} } l l r }
+\multicolumn{3}{p{0.9\textwidth}}{\@subthemaA} \\ 
+ & \@schuelerA & \@evidenzA \\[3mm]
+\multicolumn{3}{p{0.9\textwidth}}{\@subthemaB} \\ 
+ & \@schuelerB & \@evidenzB \\[3mm]
+\multicolumn{3}{p{0.9\textwidth}}{\@subthemaC} \\ 
+ & \@schuelerC & \@evidenzC \\[3mm]
+\multicolumn{3}{p{0.9\textwidth}}{\@subthemaD} \\ 
+ & \@schuelerD & \@evidenzD \\[3mm]
+\multicolumn{3}{p{0.9\textwidth}}{\@subthemaE} \\ 
+ & \@schuelerE & \@evidenzE \\[3mm]
+	\end{tabular*}
+    
     {\large\bf Betreuer / Betreuerin:}
     \begin{tabbing}
     \hspace*{1cm}\=\hspace*{5cm}\= \kill
@@ -235,6 +238,15 @@ der HTL Wiener Neustadt]
     	\> \@betreuerC \\ 
     \end{tabbing}
     {\large \@studienort, am \today}%
+    \begin{center}%
+    \rule{\textwidth}{1pt}
+    \end{center}%
+    \vskip 3mm
+		\begin{tabbing}
+    \hspace*{9cm}\= \kill
+    Abgabevermerk: \> Übernommen von:\\
+    \end{tabbing}
+
   \par\vfil\null
 \end{titlepage}%
 }
@@ -345,6 +357,8 @@ Quellen und Hilfsmittel nicht benutzt und die den benutzten Quellen wörtlich un
 	\renewcommand{\headrulewidth}{0pt}
 	\renewcommand{\footrulewidth}{0pt}
 }
+
+
 
 %%-------------------------------------------------------------
 

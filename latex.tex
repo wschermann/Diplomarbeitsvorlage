@@ -51,7 +51,7 @@ Zum Arbeiten mit \latex\ benötigt man zwei Dinge:
 \begin{itemize}
 \item \latex-Installation (Distribution)
 \item Texteditor oder Autorenumgebung (Frontend)
-%\item PostScript/PDF-Software 
+\item PDF-Software 
 \end{itemize}
 %
 Sämtliche Komponenten sind kostenlos und für alle gängigen Plattformen verfügbar.
@@ -59,51 +59,69 @@ Sämtliche Komponenten sind kostenlos und für alle gängigen Plattformen verfü
 
 \subsubsection{Windows}
 
-Unter \emph{Windows} (XP, Vista, W7) hat sich folgendes Setup bewährt,
+Unter \gls{Windows}\index[allgemein]{Windows} (7, 8, 10) hat sich folgendes Setup bewährt,
 mit dem \ua auch dieses Dokument erstellt wurde:
 %
 \begin{itemize}
-\item \textbf{\latex-Distribution}: \emph{MikTeX 2.8} oder höher.
-MikTeX enthält auch alle notwendigen Hilfsprogramme, wie beispielsweise {\tt bibtex}.%
+\item \textbf{\latex-Distribution}: \emph{MikTeX 2.9} oder höher.
+MikTeX enthält auch alle notwendigen Hilfsprogramme, wie beispielsweise {\tt biber}.%
 \footnote{\url{http://www.miktex.org}}
-
-%\item \textbf{PDF-Viewer}: \emph{SumatraPDF}%
-%\footnote{\url{http://blog.kowalczyk.info/software/sumatrapdf/}}
-
 \item \textbf{Frontend}: \emph{TeXnicCenter}.%
 \footnote{\url{http://www.texniccenter.org}}
 Grundsätzlich kann man jeden Text-Editor%
 \footnote{Unter Windows \zB\ \emph{Ultra\-Edit} (\url{http://www.ultraedit.com})
 oder \emph{WinEdit} (\url{http://www.winedit.com}).} verwenden, praktischer ist jedoch eine integrierte \latex-Umgebung wie TeXnicCenter, die einen auch bei 
 der Dateiverwaltung, der Verarbeitung der Dokumente und der Fehlerbehandlung unterstützt. Für diese Vorlage wird mindestens die Version 2.0 benötigt, da sonst keine Unicode Unterstützung gegeben ist.\footnote{\url{http://www.texniccenter.org}}
-%
+\item \textbf{PDF-Viewer}: \emph{Adobe Acrobat Reader}%
+\footnote{\url{https://get.adobe.com/de/reader/}}
 \end{itemize}
 Beim erstem Mal sollten \emph{MikTeX} und \emph{TeXnicCenter} in genau dieser Reihenfolge installiert werden.
 
-MikTeX sollte so eingerichtet werden, dass fehlende Packete automatisch geladen werden. Beim ersten Erstellen werden dann alle notwendigen Packete aus dem Internet geladen und stehen ab dann lokal zur Verfügung. Das erste Erstellen dauert dadurch allerdings mitunter sehr lange. Sollten trotzdem noch fehlende Packete wie \zB\ \emph{tracklang.sty} angezeigt werden, so muss noch MikTeX aktualiert werden. Update (Admin) im Startmenü von MikTeX unter Maintenance. Das Programm wählt automatisch die richtigen Packete zur Aktualisierung aus.
+MikTeX sollte so eingerichtet werden, dass fehlende Pakete automatisch geladen werden. Beim ersten Erstellen der Arbeit werden dann alle notwendigen Pakete aus dem Internet geladen und stehen ab dann lokal zur Verfügung. Das erste Erstellen dauert dadurch allerdings mitunter sehr lange. Sollten trotzdem noch fehlende Pakete wie \zB\ \emph{tracklang.sty} angezeigt werden, so muss noch MikTeX aktualisiert werden. Update (Admin) im Startmenü von MikTeX unter Maintenance. Das Programm wählt automatisch die richtigen Pakete zur Aktualisierung aus. Sollten dann immer noch Pakete fehlen, sollte auch noch die Datenbank von MikTeX aktualisiert werden (Im MikTeX Pakete-Manager).
+
+Bei der Diplomarbeitsvorlage ist mit \texttt{\_Diplomarbeitsvorlage.tcp} bereits ein vorgefertigtes TeXnicCenter-Projekt enthalten. Damit dieses Projekt vollständig kompiliert werden kann, muss im TeXnicCenter noch das Ausgabeprofil korrekt eingestellt werden. Dieses Ausgabeprofil kann aus der Datei \texttt{\_Ausgabeprofil.tco} importiert werden oder gemäß der Abbildung \ref{fig:Settings} eingestellt werden. Die nicht vollständig sichtbaren Argumente bei \texttt{makeglossaries} sind \verb|-s "%tm.ist" -t "%tm.glg" -o "%tm.gls" "%tm.glo"|.
+
+\begin{figure}
+    \centering
+    \subfigure[]
+    {
+        \includegraphics[scale=.4]{TeXnicCenterEinstellungen.PNG}
+    }
+    \subfigure[]
+    {
+        \includegraphics[scale=.4]{TeXnicCenterEinstellungenGlossar.PNG}
+    }
+    \caption
+    {
+        (a) Einstellungen für pdflatex, biber und makeindex
+        (b) Einstellungen für makeglossaries
+    }
+    \label{fig:Settings}
+\end{figure}
 
 \subsubsection{Mac~OS}
 
-Unter Mac~OS wurde die aktuelle Vorlage noch nicht getestet. Der folgende Text bezieht sich auf die alte Vorlage und ist möglicherweise nicht mehr korrekt.
+Unter Mac~OS wird die aktuelle Vorlage mangels verfügbarer Geräte nicht getestet. Der folgende Text bezieht sich auf die alte Vorlage und ist möglicherweise nicht mehr korrekt.
 
 Bewährte und weit verbreitete Frontends für den Mac sind \emph{MacTeX}%
 \footnote{\url{http://www.tug.org/mactex} -- enthält eine komplette und fertig
-konfigurierte LaTeX-Installation für Mac~OS (ca.\ 1.15 GB download).}
+konfigurierte \latex\-Installation für Mac~OS\index[allgemein]{Mac~OS} (ca.\ 1.15 GB download).}
 und \emph{TeXShop},%
 \footnote{\url{http://www.uoregon.edu/~koch/texshop/}}
 das üblicherweise zusammen mit der TeX-Distribution \emph{TeX Live} verwendet wird. 
 Weit verbreitet ist auch der \emph{TeXworks} Editor, der ebenfalls im MacTeX Package enthalten ist und auch MiKTeX unter Windows beigefügt ist.
 
+Weitere aktuelle Informationen zu der Arbeit mit \latex\ unter Mac~OS finden sich auf den Informationsseiten zu \latex\ der Technischen Universität Graz.\footnote{\url{http://latex.tugraz.at/programme/mac_os_x}}
 
 \subsubsection{Linux}
 
-Auch unter \gls{Linux} ist \emph{TeX Live} (\so) eine häufig verwendete TeX-Distri\-bution. 
+Auch unter \gls{Linux}\index[allgemein]{Linux}  ist \emph{TeX Live} (\so) eine häufig verwendete TeX-Distri\-bution. 
 Als Frontend sind beispielsweise
-\emph{Lyx}\footnote{\url{http://www.lyx.org}},
+\emph{Texmaker}\footnote{\url{http://www.xm1math.net/texmaker}}(empfohlen) \emph{Lyx}\footnote{\url{http://www.lyx.org}},
 \emph{Kile}\footnote{\url{http://kile.sourceforge.net}} und
-\emph{Texmaker}\footnote{\url{http://www.xm1math.net/texmaker}} 
 verbreitet.
 In manchen gängigen Linux-Versionen ist bereits eine komplette \latex-Distribution enthalten, sodass im besten Fall überhaupt keine zusätzliche Installation notwendig ist.  
+
 
 Eine interessante Alternative ist die Verwendung von
 \emph{Eclipse}\footnote{\url{http://www.eclipse.org}} als plattformunabhängiges Frontend 
@@ -113,7 +131,10 @@ Plugin).
 
 Zum Nachinstallieren zusätzlicher \latex-Pakete die nicht in der
 Standardinstallation enthalten sind gibt es für Linux ebenfalls den MikTeX
-Package Manager\footnote{\url{http://wiki.ubuntuusers.de/MiKTeX_Package_Manager}}. Allerdings empfiehlt es sich meist die notwendigen Packete statt dessen über die Softwareverwaltung der Linux-Distribution zu installieren. So kann \zB\ in Ubuntu das Packet \emph{texlive-lang-german} installiert werden um die für diese Vorlage notwendige Unterstützung der deutschen Sprache nachzuinstallieren.
+Package Manager\footnote{\url{http://wiki.ubuntuusers.de/MiKTeX_Package_Manager}}. Allerdings empfiehlt es sich meist die notwendigen Pakete statt dessen über die Softwareverwaltung der Linux-Distribution zu installieren. So kann \zB\ in Ubuntu das Paket \emph{texlive-lang-german} installiert werden um die für diese Vorlage notwendige Unterstützung der deutschen Sprache nach zu installieren.
+
+
+Wer es sich einfach machen will und kein Problem mit einem größeren Download bzw. größerem Speicherverbrauch auf der Festplatte hat, kann auch einfach \emph{TeX Live} mit dem Paket \emph{texlive-full} vollständig installieren.
 
 \subsubsection{Automatische Generierung von \latex-Code}
 Bei der Erstellung von komplizierterem \latex-Code kann man sich zum Glück
@@ -123,6 +144,7 @@ einiger Hilfsmittel bedienen.
 \item \emph{Online Latex Equation
 Editor}\footnote{\url{http://www.codecogs.com/latex/eqneditor.php}} ist ein
 einfach zu bedienender Online Editor für mathematische Formeln.
+\item \emph{Online Latex Table Editor}\footnote{\url{http://www.tablesgenerator.com/latex_tables}}
 \item \emph{Writer2\latex}\footnote{\url{http://www.ooowiki.de/Writer2LaTeX}}
 ist ein Export-Filter für OpenOffice-Writer mit dem jede Form von Textdokumenten in
 \latex-Code umgewandelt werden kann.
@@ -147,16 +169,15 @@ sein. Erfreulicherweise ist sehr viel Nützliches auch online verfügbar.
 Gute Startpunkte sind \zB
 %
 \begin{itemize}
-\item \emph{{\rm\LaTeXe}-Kurzbeschreibung} von Schmidt et al.\ \cite{Schmidt01}
-\item \emph{The Not So Short Introduction to {\rm \LaTeXe}}
-            von Oetiker et al.\ \cite{Oetiker01}
+\item \emph{\citetitle{Schmidt01}}\footcite{Schmidt01}
+\item \emph{\citetitle{Oetiker01}}\footcite{Oetiker01}
 \end{itemize}
 %
 \noindent
 Als mittlerweile bereits klassisches Handbuch zu \latex ist
 %
 \begin{itemize}
-  \item \emph{A Guide to {\rm\LaTeXe}} von H.~Kopka und P.~Daly \cite{Kopka98}
+  \item \emph{\citetitle{Kopka98}}\footcite{Kopka98}
 \end{itemize}
 %
 zu empfehlen, zu dem es für Interessierte auch zwei vertiefende
@@ -172,20 +193,19 @@ Comprehensive TeX Archive Network} (CTAN) auf
 \end{quote}
 %
 Besonders nützlich sind auch die
-\emph{Comprehensive List of {\rm \latex} Symbols} \cite{Pakin01}
+\emph{Comprehensive List of {\rm \latex} Symbols} \footcite{Pakin01}
 und die Beschreibungen wichtiger \latex-Pakete, wie
 %
 \begin{quote}
-	\texttt{babel} \cite{Braams2008},\newline
-% \texttt{german}, \texttt{ngerman} \cite{Raichle98},\newline
-  \texttt{grahics}, \texttt{graphicx} \cite{Carlisle99},\newline
-  \texttt{fancyhdr} \cite{Oostrum97},\newline
-  \texttt{caption} \cite{Sommerfeldt07},\newline
-  \texttt{subfigure} \cite{Cochran95}.
+	\texttt{babel} \footcite{Braams2008},\newline
+  \texttt{grahics}, \texttt{graphicx} \footcite{Carlisle99},\newline
+  \texttt{fancyhdr} \footcite{Oostrum97},\newline
+  \texttt{caption} \footcite{Sommerfeldt07},\newline
+  \texttt{subfigure} \footcite{Cochran95}.
 \end{quote}
 
 
-
+Und zu guter Letzt für die Freunde von Wikipedia gibt es noch ein \latex-Buch in der WikiBooks-Sammlung.\footnote{\url{https://en.wikibooks.org/wiki/LaTeX}}
 
 
 \section{Schrift}
@@ -320,7 +340,7 @@ eine Markierung für Überschriften mit Titel (\su)!
 \end{minipage}}
 \end{center}
 
-Üblicherweise wird durch {\latex} zwischen aufeinanderfolgenden Ab\-sätzen
+Üblicherweise wird durch {\latex} zwischen aufeinander folgenden Ab\-sätzen
 \emph{kein} zusätzlicher vertikaler Abstand eingefügt. \footnote{Das ist die
 Standardeinstellung in {\latex} und natürlich abhängig von der verwendeten Dokumentenklasse, Style
 etc.} 
@@ -424,14 +444,14 @@ liegenden Text sollte grundsätzlich \emph{kein Leerzeichen} entstehen (eventuel
 Zeilen\-um\-brüche mit \verb!%! auskommentieren).
 Die Nummerierung und Platzierung der Fußnoten
 erfolgt automatisch, sehr große Fußnoten werden notfalls sogar auf
-zwei aufeinanderfolgende Seiten umgebrochen.
+zwei aufeinander folgende Seiten umgebrochen.
 
 
 \subsubsection{Fußnoten in Überschriften}
 
 Auch das braucht man ab und zu, ist aber \va\ deshalb kein so
 einfacher Fall, weil die Fußnote in einer Überschrift nur an Ort
-und Stelle aufscheinen darf, nicht aber im \emph{Inhaltsverzeichnis}! Ein
+und Stelle auf scheinen darf, nicht aber im \emph{Inhaltsverzeichnis}! Ein
 konkretes Beispiel dafür ist die Überschrift zu
 Kapitel~\ref{chap:Word}, die etwa folgendermaßen definiert ist:
 %
@@ -732,7 +752,7 @@ Diesem Dokument angeschlossen sind zwei Dateien, die beide zum Erstellen dieses 
 Alle (\verb!.tex!) Dokumente dieser Klasse beginnen mit der Anweisung
 %
 \begin{itemize}
-\item[] \verb!\documentclass[!\texttt{\emph{language}}\verb!]{htldipl}! 
+\item[] \verb!\documentclass[!\texttt{\emph{language,printsetting,colormode}}\verb!]{htldipl}! 
 \end{itemize}
 %
 Mit der Option \texttt{\emph{language}} kann die Hauptsprache des Dokuments spezifiziert werden, 
@@ -742,6 +762,22 @@ die möglichen Werte dafür sind
 \item[] \verb!german! (\emph{default})
 \item[] \verb!english!
 \end{itemize}
+
+Mit der Option \texttt{\emph{printsetting}} kann spezifiziert werden, ob das Dokument im Druck einseitig oder beidseitig gedruckt werden soll. Diese Option steuert natürlich nicht direkt den Drucker, sondern passt die Formatierung des Dokuments für den späteren Druck an. \ZB\ werden bei bedarf Leerseiten hinzugefügt, damit bei beidseitigem Druck die Kapitel immer auf der Vorderseite beginnen.
+Die möglichen Werte dafür sind
+%
+\begin{itemize}
+\item[] \verb!oneside! (\emph{default})
+\item[] \verb!twoside!
+\end{itemize}
+%
+Mit der Option \texttt{\emph{colormode}} kann spezifiziert werden, ob der im Dokument enthaltene Source-Code mit farblichem Syntax-Highlighting dargestellt werden soll oder in Grau/Schwarz. Wird das ganze Dokument auf einem Farbdrucker gedruckt empfiehlt sich die farbliche Darstellung. Werden nur die Seiten mit Farbbildern auf einem Farbdrucker gedruckt sollte für die bessere Lesbarkeit des Codes die andere Darstellung gewählt werden.
+Die möglichen Werte dafür sind
+%
+\begin{itemize}
+\item[] \verb!color! (\emph{default})
+\item[] \verb!black!
+\end{itemize}
 %
 Der vollständige Quelltext für eine entsprechende \verb!.tex! Hauptdatei ist in Anhang \ref{app:latex} 
 gelistet.
@@ -749,18 +785,19 @@ gelistet.
 
 \subsubsection{Angaben zur Arbeit}
 
-Zum erstellen der Titelseite sind einige Angaben notwendig:
+Zum erstellen der Titelseite sind einige Angaben notwendig \zB\:
 %
 \begin{itemize}
 \item[] %
 \verb!\title{!\texttt{\em Titel der Arbeit}\verb!}! \newline%
-\verb!\author{!\texttt{\em Autor}\verb!}! \newline%
 \verb!\abteilung{!\texttt{\em Abteilung}\verb!}! \newline%
 \verb!\studienort{!\texttt{\em Studienort}\verb!}! \newline%
-\verb!\abgabemonat{!\texttt{\em Monat der Abgabe}\verb!}! \newline%
 \verb!\abgabejahr{!\texttt{\em Jahr der Abgabe}\verb!}!
 \end{itemize}
 %
+
+Da die Diplomarbeit von einer unterschiedliche Anzahl von Autoren geschrieben werden kann, können bei den Angaben zu den Autoren die nicht benötigten Einträge einfach frei gelassen werden.
+
 
 \subsubsection{Titelseiten}
 
@@ -778,8 +815,7 @@ Einstellungen:
 \emph{Seite} & \emph{Diplomarbeit} \\
   \hline
   {\rm i} & Titelseite \\
-  {\rm ii} & Copyright-Seite \\
-  {\rm iii} & Eidesstattliche Erklärung \\
+  {\rm ii} & Eidesstattliche Erklärung \\
   \hline
 \end{tabular}
 \end{center}
@@ -902,8 +938,8 @@ gängigen \latex\ Standardinstallationen (\zB MikTeX) bereits enthalten.}
 \texttt{ifthen}   &  für logische Entscheidungen in \latex\\
 \texttt{inputenc} &  Erweiterter Eingabezeichensatz \\ 
 %\texttt{latin1}   &  T1-Schriften, \ua zur besseren Silbentrennung \\ 
-\texttt{listings2} &  Auflistung von Programmcode \\ 
-%\texttt{ngerman}  &  Neue deutsche Rechtschreibung \\ 
+\texttt{listings-utf8} &  Auflistung von Programmcode \\ 
+\texttt{pdfpages}  &  PDF-Seiten in das Dokument einbinden \\ 
 \texttt{upquote}  &  Gerade Hochkommas in \texttt{verbatim}-Texten \\ 
 \texttt{url}      &  Behandlung von URLs im Text \\ 
 \texttt{verbatim} &  Verbesserte \texttt{verbatim}-Umgebung \\

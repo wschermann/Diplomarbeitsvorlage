@@ -7,18 +7,21 @@
 % die folgende Zeile einkommentieren für Arial-Ähnliche Schriftart
 %\renewcommand{\familydefault}{\sfdefault}
 
-\graphicspath{{images/}}    % wo liegen die Bilder?
-\usepackage[margin=3cm]{geometry} % alle Seitenränder auf 3 cm einstellen
+\graphicspath{{images/}}    % Bilderverzeichnis
+
+\include{Settings}
 
 \makeglossaries
-%\include{glossary}
-\loadglsentries{glossary}
+\loadglsentries{glossary}					%beinhaltet Daten für das Glossar
+\addbibresource{literatur.bib}     %beinhaltet Daten für das Literarturverzeichnis
+
 %%%----------------------------------------------------------
 \begin{document}
 %%%----------------------------------------------------------
-
+%Einstellungen an die eigene Diplomarbeit anpassen
 \title{Entwurf eines Versuchstandes für Kreiselpumpen}
 \abteilung{Maschineningenieurwesen}
+%\schwerpunkt{} wenn kein Ausbildungsschwerpunkt vorhanden ist z.B. Informatik
 \schwerpunkt{Ausbildungsschwerpunkt Automatisierungstechnik}
 \studienort{Wiener Neustadt}
 \schule{HTBLuVA Wiener Neustadt}
@@ -55,6 +58,7 @@
 %%%----------------------------------------------------------
 
 \include{vorwort}				%ggfs. weglassen
+\include{dokumentation}
 \include{kurzfassung}		
 \include{abstract}			
 
@@ -65,6 +69,7 @@
 \include{einleitung}
 \include{diplomschrift}
 \include{latex}
+\include{faq}
 \include{abbildungen}
 \include{mathematik}
 \include{literatur}
@@ -75,28 +80,38 @@
 %%%----------------------------------------------------------
 %%%Anhang
 \appendix
-\printglossaries
-\include{anhang_a}	% Technische Ergänzungen
+%\include{anhang_a}	% Technische Ergänzungen
 \include{anhang_b}	% Inhalt der CD-ROM/DVD
 \include{anhang_c}	% Chronologische Liste der Änderungen
 \include{anhang_d}	% Quelltext dieses Dokuments
 
 %%%----------------------------------------------------------
+%Ausgabe der automatischen Zusatzdaten: Glossar, Index, Literaturverzeichnis
+\clearpage
+\printglossaries
+
+\clearpage
+\chapter*{Index}
+\addcontentsline{toc}{chapter}{Index}
+\printindex[allgemein]
+
+\printindex
+
+\printindex[name]
+
+\printindex[title]
+
 
 %Literaturverzeichnis
 \clearpage
 \addcontentsline{toc}{chapter}{\bibname}
 
-\bibliographystyle{bababbrv} 
-%options: babplain, babunsrt, bababbrv, babalpha 
-%         babplain-fl etc: first/lastname 
-%         babplain-lf etc: last/firstname
-\bibliography{literatur}     %BibTeX-Datei literatur.bib
+\printbibliography
 
 
 %%%----------------------------------------------------------
 
 %%%Messbox zur Druckkontrolle
-\include{messbox}
+%\include{messbox}
 
 \end{document}

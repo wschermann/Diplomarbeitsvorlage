@@ -115,7 +115,7 @@ vermutlich völliger Unsinn.}
 \section{Abbildungen}
 
 Für die Einbindung von Grafiken in \latex wird die Verwendung des Stan\-dard-Pakets
-\texttt{graphicx} \cite{Carlisle99} empfohlen 
+\texttt{graphicx}\footcite{Carlisle99} empfohlen 
 (wird durch das \texttt{htl}-Paket bereits eingebunden). 
 Folgende Bildformate können verwendet werden:
 %
@@ -319,18 +319,36 @@ einreihige Rollenlager in Abb.~\ref{fig:Bearings}\thinspace(c), so aussehen:
 \end{itemize}
 %
 Für kompliziertere Abbildungen sollte man die Verwendung des 
-\texttt{subfigure}-Pakets \cite{Cochran95} in Betracht ziehen.
+\texttt{subfigure}-Pakets \footcite{Cochran95} in Betracht ziehen. Ein Beispiel ist in der Vorlage in Abbildung \ref{fig:Settings} zu finden.
 
 
 \subsection{Quellenangaben in Captions}
 \label{sec:QuellenangabenInCaptions}
 
 Wenn Bilder, Grafiken oder Tabellen aus anderen Quellen verwendet werden, dann muss ihre Herkunft in jedem Fall klar ersichtlich gemacht werden, und zwar am besten direkt in der Caption.
-Verwendet man beispielsweise eine Grafik aus einem Buch oder einer sonstigen zitierfähigen Publikation, dann sollte man diese in das Literaturverzeichnis aufnehmen und wie üblich mit
-\verb!\cite{..}! zitieren, wie in Abb.\ \ref{fig:Bearings} demonstriert. Weitere Details zu dieser Art von Quellenangaben finden sich in Kap.\ \ref{cha:Literatur}.
+Verwendet man beispielsweise eine Grafik aus einem Buch oder einer sonstigen zitierfähigen Publikation, dann sollte man diese in das Literaturverzeichnis aufnehmen und wie üblich zitieren, wie in Abb.\ \ref{fig:Bearings} demonstriert. Da Grafiken floating-Elemente sind, muss statt mit
+\verb!\footcite{..}! die Kombination \verb!\footnotemark! und \verb!\footcitetext! verwendet werden. Weitere Details zu dieser Art von Quellenangaben finden sich in Kap.\ \ref{cha:Literatur}.
 
-Bei Bildern aus dem Internet ist es hingegen ratsam, die zugehörige Website \emph{nicht} in das Literaturverzeichnis aufnehmen, sondern (mit \verb!\url{..}!) direkt in der Caption oder in einer Fußnote anzugeben (siehe Abschn.\ \ref{sec:OnlneQuellen}). 
+Bei Bildern aus dem Internet ist es hingegen ratsam, die zugehörige Website \emph{nicht} in das Literaturverzeichnis aufnehmen, sondern (mit \verb!\url{..}!) direkt in der Caption oder in einer Fußnote anzugeben (siehe Abschn.\ \ref{sec:OnlineQuellen} und Abbildung \ref{fig:latexinternet}). 
 
+Sollte die Kombination von Caption, Fußnote und Url verwendet werden, muss die Fußnote in ein \verb!\footnotemark! und ein \verb!\footnotetext! aufgeteilt werden. Abbildung \ref{fig:latexinternet} zeigt ein Beispiel davon und das Programm \ref{prog:footnotemark} zeigt den \latex\ Quelltext. Die Fußnote wird in diesem Fall nicht immer auf der selben Seite wie die Abbildung sein, was durch die Durchnumerierung der Fußnoten jedoch kein Problem darstellen sollte. Vor allem, da die Fußnote sich dann auf der Seite befindet wo die Abbildung im Text erwähnt werden sollte. 
+
+\begin{program}
+% place caption consistently either at the top or bottom:
+\caption{\latex\ Quelltext zu Abbildung \ref{fig:latexinternet}.}
+\label{prog:footnotemark}
+%
+\begin{LaTeXCode}
+\begin{figure}
+\centering
+\includegraphics[width=.85\textwidth]{LatexInternet}
+\caption[]{Witze über Latex im Internet.\footnotemark }
+\label{fig:latexinternet}
+\end{figure}
+\footnotetext{Quelle: \url{https://pr0gramm.com/static/1454890}}
+\end{LaTeXCode}
+%
+\end{program}
 
 % Beispiel für die Verwendung von "subfigure"
 
@@ -346,15 +364,21 @@ Bei Bildern aus dem Internet ist es hingegen ratsam, die zugehörige Website \em
   (c) & (d)
 \end{tabular}
 %
-\caption{Diverse Maschinenelemente.
+\caption[]{Diverse Maschinenelemente.
 Overhang Mounting (a), Straddle Mounting (b),
 einreihiges Rollenlager (c), Schmierung von Rollenlagern (d).
-Aus \cite{Faires34}.
-}
+Aus \citetitle{Faires34}.\footnotemark }
 \label{fig:Bearings}
 \end{figure}
+\footcitetext{Faires34}
 
-
+\begin{figure}
+\centering
+\includegraphics[width=.85\textwidth]{LatexInternet}
+\caption[]{Witze über Latex im Internet.\footnotemark }
+\label{fig:latexinternet}
+\end{figure}
+\footnotetext{Quelle: \url{https://pr0gramm.com/static/1454890}}
 
 \section{Tabellen}
 

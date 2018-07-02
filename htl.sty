@@ -2,10 +2,10 @@
 %% Modifiziert von: Wolfgang Schermann
 %% Ursprünglich: hgb.sty
 %% Ursprünglicher Autor: Wilhelm Burger (wilhelm.burger@fh-hagenberg.at)
-
+\PassOptionsToPackage{T1,hyphens,obeyspaces,spaces}{url}
 
 \NeedsTeXFormat{LaTeX2e}
-\newcommand{\htlDate}{2015/10/07}			%Versionsdatum
+\newcommand{\htlDate}{2018/07/01}			%Versionsdatum
 \ProvidesPackage{htl}[\htlDate]
 
 % options german/english are passed from the class file
@@ -74,12 +74,15 @@
 \ifthenelse{\equal{\htl@MainLanguage}{english}}%
 	{\main@language{english}}{}
 	
-\RequirePackage[fixlanguage]{babelbib}
+%\RequirePackage[fixlanguage]{babelbib}
 %\RequirePackage{natbib}
+\usepackage{csquotes}
+\usepackage[backend=biber,bibencoding=utf8,style=verbose-inote,citetracker,citestyle=authortitle,indexing=true]{biblatex}
+\usepackage{imakeidx}
+\RequirePackage{graphicx} 
+\usepackage{subfigure}
 
-\RequirePackage[dvips]{graphicx} % zur Einbindung von EPS-Grafiken
-
-\RequirePackage[T1,hyphens,obeyspaces,spaces]{url}
+%\RequirePackage[T1,hyphens,obeyspaces,spaces]{url}
 \urlstyle{sf}
 
 \RequirePackage{verbatim}
@@ -300,6 +303,16 @@ H\"ohe $ = #2 {\rm\ mm}$
 
 \RequirePackage{listingsutf8}
 
+\lstset{literate=%
+{Ö}{{\"O}}1
+{Ä}{{\"A}}1
+{Ü}{{\"U}}1
+{ß}{{\ss}}2
+{ü}{{\"u}}1
+{ä}{{\"a}}1
+{ö}{{\"o}}1
+}
+
 \lstset{
 %language=Java,%
 basicstyle=\ttfamily\footnotesize,%
@@ -505,7 +518,7 @@ keepspaces=true,%
 \RequirePackage[novbox]{pdfsync} % notwendig für inverse Suche aus dem PDF viewer
 % novbox Option verhindert Konflikt u.a. mit array-Package
 
-\RequirePackage[noadjust]{cite} % vermeidet zusätzliches Spacing vor [..]
+%\RequirePackage[noadjust]{cite} % vermeidet zusätzliches Spacing vor [..]
 
 \RequirePackage{ifpdf}
 \ifpdf % LaTeX is in native PDF mode (pdflatex) 

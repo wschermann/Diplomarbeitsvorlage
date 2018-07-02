@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<txcop:outputProfiles version="2" xmlns:txcop="http://schemas.ToolsCenter.org/TeXnicCenter/OutputProfiles.xsd">
+	<outputProfileList>
+		<outputProfile name="LaTeX &#8680; PDF" stopOnLatexError="false">
+			<texCommand execute="true" path="pdflatex.exe" arguments="-interaction=nonstopmode &quot;%wm&quot;"/>
+			<bibTexCommand execute="true" path="biber.exe" arguments="&quot;%tm&quot;"/>
+			<makeIndexCommand execute="true" path="makeindex.exe" arguments="&quot;%tm.idx&quot; -t &quot;%tm.ilg&quot; -o &quot;%tm.ind&quot;"/>
+			<preProcessors/>
+			<postProcessors>
+				<processor name="Glossary" path="makeglossaries.exe" arguments="-s &quot;%tm.ist&quot; -t &quot;%tm.glg&quot; -o &quot;%tm.gls&quot; &quot;%tm.glo&quot;" inputFile="" outputFile=""/>
+			</postProcessors>
+			<viewer path="Acrobat.exe" closeBeforeCompilation="true">
+				<viewProjectCommand type="dde">
+					<commandLineCommand path="" arguments=""/>
+					<ddeCommand path="Acrobat.exe" server="acroview" topic="control" command="[DocOpen(&quot;%bm.pdf&quot;)][FileOpen(&quot;%bm.pdf&quot;)]"/>
+				</viewProjectCommand>
+				<viewCurrentFileCommand type="dde">
+					<commandLineCommand path="" arguments=""/>
+					<ddeCommand path="Acrobat.exe" server="acroview" topic="control" command="[DocOpen(&quot;%bm.pdf&quot;)][FileOpen(&quot;%bm.pdf&quot;)]"/>
+				</viewCurrentFileCommand>
+				<viewCloseCommand type="dde">
+					<commandLineCommand path="" arguments=""/>
+					<ddeCommand path="" server="acroview" topic="control" command="[DocClose(&quot;%bm.pdf&quot;)]"/>
+				</viewCloseCommand>
+			</viewer>
+		</outputProfile>
+	</outputProfileList>
+</txcop:outputProfiles>

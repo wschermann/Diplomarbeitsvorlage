@@ -29,33 +29,41 @@ Eintrag im Literaturverzeichnis hat und umgekehrt.
 
 \section{Literaturverweise}
 
-\subsection{{\tt cite}}
+\subsection{{\tt citetitle} und {\tt footcite}}
 
 Für Literaturverweise im laufenden Text verwendet man in \latex die Anweisung
 \begin{itemize}
-\item[] \verb!\cite{!\textit{Verweise}\verb!}! oder
-        \verb!\cite[!\textit{Zusatztext}\verb!]{!\textit{Verweise}\verb!}!.
+\item[] \verb!\citetitle{!\textit{Verweise}\verb!}! oder
+\item[] \verb!\citetitle[!\textit{Zusatztext}\verb!]{!\textit{Verweise}\verb!}!.
+\end{itemize}
+
+\noindent%
+Zu jedem Verweis muss außerdem noch als Fußnote der genau Verweis mit dem Autor angegeben werden als
+
+\begin{itemize}
+\item[] \verb!\footcite{!\textit{Verweise}\verb!}! oder
+\item[] \verb!\footcite[!\textit{Zusatztext}\verb!]{!\textit{Verweise}\verb!}! oder
+\item[] \verb!\footcite[!\textit{Vorwort}\verb!][!\textit{Zusatztext}\verb!]{!\textit{Verweise}\verb!}!.
 \end{itemize}
 
 \noindent%
 \textit{Verweise} ist eine durch Kommas getrennte Auflistung von Quellen-Schlüsseln
 zur Identifikation der entsprechenden Einträge im Literaturverzeichnis.
 Mit \textit{Zusatztext} können Ergänzungstexte zum aktuellen Literaturverweis angegeben
-werden, wie \zB Kapitel- oder Seitenangaben bei Büchern.
+werden, wie \zB Kapitel- oder Seitenangaben bei Büchern. Das \textit{Vorwort} gibt bei den Verweisen in den Fußnoten noch Zusatztexte vor dem Verweis an, wie \zB siehe, weiters,...
+
 Einige Beispiele dazu:
 \begin{itemize}
-\item[] \verb!Mehr dazu findet sich in \cite{Kopka98}.! \newline
-      $\rightarrow$ Mehr dazu findet sich in \cite{Kopka98}.
-\item[] \verb!Mehr über \emph{Styles} in \cite[Kap.\ 3]{Kopka98}.! \newline
-      $\rightarrow$ Mehr über \emph{Styles} in \cite[Kap.\ 3]{Kopka98}.
-\item[] \verb!Die Angaben in \cite[S.\ 274--277]{Ears99} sind falsch.! \newline
-      $\rightarrow$ Die Angaben in \cite[S.\ 274--277]{Ears99} sind aus meiner Sicht falsch.
-\item[] \verb!überholt sind auch \cite{Ears99,Microsoft01,Duden97}.! \newline
-      $\rightarrow$ überholt sind auch \cite{Ears99,Microsoft01,Duden97}.
+\item[] \verb!Mehr dazu findet sich in \citetitle{Kopka98}\footcite[][]{Kopka98}.! \newline
+      $\rightarrow$ Mehr dazu findet sich in \citetitle{Kopka98}\footcite[][]{Kopka98}.
+\item[] \verb!Mehr über \emph{Styles} in \citetitle{Kopka98}\footcite[][Kap.\ 3]{Kopka98}.! \newline
+      $\rightarrow$ Mehr über \emph{Styles} in \citetitle{Kopka98}\footcite[][Kap.\ 3]{Kopka98}.
+\item[] \verb!Die Angaben in \citetitle{Ears99}\footcite[][S.\ 274--277]{Ears99} sind falsch.! \newline
+      $\rightarrow$ Die Angaben in \citetitle{Ears99}\footcite[][S.\ 274--277]{Ears99} sind aus meiner Sicht falsch.
+\item[] \verb!überholt sind auch \citetitle{Ears99,Microsoft01,Duden97}!\newline\verb!\footcite[][]{Ears99,Microsoft01,Duden97}.! \newline
+      $\rightarrow$ überholt sind auch \citetitle{Ears99,Microsoft01,Duden97}\footcite[][]{Ears99,Microsoft01,Duden97}.
 \end{itemize}
-Die im letzten Beispiel sichtbare automatische Sortierung der Angaben
-in der Verweisliste wird übrigens durch die Verwendung des \texttt{cite}-Pakets
-erreicht.
+
 
 
 \subsection{Häufige Fehler}
@@ -63,13 +71,18 @@ erreicht.
 \subsubsection{Verweise außerhalb des Satzes}
 Literaturverweise sollten innerhalb oder am Ende eines Satzes (vor
 dem Punkt) stehen, nicht \emph{außerhalb}, wie
-hier. \cite{Oetiker01} $\leftarrow$~FALSCH!
+hier. \footcite[siehe][]{Oetiker01} $\leftarrow$~FALSCH!
+
+\subsubsection{Verweis nicht sichtbar}
+Wenn eine Quelle\repeatfootcite{Kopka98} mehrfach in einem Kapitel verwendet wird, müssen alle Stellen gekennzeichnet werden, an denen die Quelle\repeatfootcite{Kopka98} verwendet wird. Ein einfacher Verweis auf die Quelle\repeatfootcite{Kopka98} am Anfang des Kapitels ist nicht ausreichend.
+
+Um mehrfache gleiche Zeilen in den Fußnoten zu vermeiden können Zitate mit dem Befehl \verb|\repeatfootcite{Kopka98}| geschrieben werden, der gleiche Zitate zusammenfasst.
 
 \subsubsection{Zitate}
 Falls ein ganzer Absatz (oder mehr) aus einer Quelle zitiert wird,
 sollte man den Verweis im vorlaufenden Text platzieren und nicht
 \emph{innerhalb} des Zitats selbst. \ZB, die folgenden klaren Worte
-aus \cite{Oetiker01}:
+aus \citetitle[][]{Oetiker01}:
 \begin{quote}
 Typographical design is a craft. Unskilled authors often commit
 serious formatting errors by assuming that book design is mostly a
@@ -124,28 +137,28 @@ Im Zweifelsfall findet man detailliertere Regeln in jedem guten Buch über wisse
 Für die Erstellung des Literaturverzeichnisses gibt es in \latex zwei
 Möglichkeiten:
 \begin{enumerate}
-\item Das Literaturverzeichnis manuell zu formatieren (s.\ \cite[S.\ 56--57]{Kopka98}).
+\item Das Literaturverzeichnis manuell zu formatieren \footcite[siehe][S.\ 56--57]{Kopka98}.
 \item Die Verwendung von BibTeX und einer zugehörigen Literaturdatenbank
-(s.\ \cite[S.\ 245--255]{Kopka98}).
+\footcite[siehe][S.\ 245--255]{Kopka98}.
 \end{enumerate}
 Tatsächlich ist die erste Variante nur bei sehr wenigen Literaturangaben interessant.
 Die Arbeit mit BibTeX macht sich hingegen schnell bezahlt und ist zudem wesentlich
 flexibler.
 
-\subsection{Literaturdaten in BibTeX}
+\subsection{Literaturdaten in BibLaTeX}
 \label{sec:bibtex}
 
-BibTeX ist ein eigenständiges Programm, das aus einer "`Literaturdatenbank"' (eine oder mehrere
+BibLaTeX\footnote{http://get-software.net/info/translations/biblatex/de/biblatex-de.pdf} ist ein eigenständiges Programm, das aus einer "`Literaturdatenbank"' (eine oder mehrere
 Textdateien von vorgegebener Struktur) ein für \latex geeignetes Literaturverzeichnis
 erzeugt. Dabei ist es möglich, aus einer Reihe von verschiedenen Stilvarianten
 (\emph{bibliography styles}) zu wählen.
-Literatur zur Verwendung von BibTeX findet man online, \zB in
-\cite{Taylor96,Patashnik88}.
+Literatur zur Verwendung von BibLaTeX findet man online, \zB in
+\citetitle{Taylor96,Patashnik88}\footcite{Taylor96,Patashnik88}.
 
-Man kann BibTeX-Dateien natürlich mit einem Texteditor manuell erstellen, für
-viele Literaturquellen sind auch bereits fertige BibTeX-Einträge im Web verfügbar.
+Man kann BibLaTeX-Dateien natürlich mit einem Texteditor manuell erstellen, für
+viele Literaturquellen sind auch bereits fertige BibLaTeX-Einträge im Web verfügbar.
 Darüber hinaus gibt es einige Software-Werkzeuge zur Wartung von
-BibTeX-Verzeichnissen, zu empfehlen ist beispielsweise
+BibLaTeX-Verzeichnissen, zu empfehlen ist beispielsweise
 JabRef.%
 \footnote{\url{http://jabref.sourceforge.net}}
 %und
@@ -153,35 +166,29 @@ JabRef.%
 %\footnote{\url{www.iui.se/staff/jonasb/bibedit/}}	%% nicht mehr auffindbar!
 %von Jonas Björnerstedt.
  
-In diesem Dokument wird der BibTeX-Stil \texttt{bababbrv}
-("`Babel abbreviated"'),%
-\footnote{Aus dem \texttt{babelbib}-Paket von Harald Harders 
-(\url{http://www.ctan.org/tex-archive/biblio/bibtex/contrib/babelbib/},
-\sa\ Abschn.\ \ref{sec:TippsZuBibtex}).}
-eine Variante der Originalversion \texttt{abbrv}, verwendet. Eine weitere
-häufig verwendete Stilvariante ist \texttt{babplain} (\bzw\ \texttt{plain}).
 Im \latex-Quelltext wird das Literaturverzeichnis am Ende des
 Dokuments in dieser Form eingesetzt:
 %
 \begin{verbatim}
-    \bibliographystyle{bababbrv}
-    \bibliography{literatur}
+    \printbibliography
 \end{verbatim}
 %
-Die zweite Zeile verweist auf die Literaturdatenbank in der Datei
-\url{literatur.bib}, der von BibTeX verarbeitet wird. Unter der Annahme, dass die
-Hauptdatei der Arbeit \url{da.tex} heißt, sind zur Erzeugung der Literaturliste
-folgende Befehle nötig (im "`Command Prompt"'):
+Der Verweis auf die Literaturdatenbank in der Datei
+\url{literatur.bib}, der von BibLaTeX verarbeitet wird befindet sich vor dem Beginn des eigentlichen Dokuments.
 %
 \begin{verbatim}
-    > latex da
-    > bibtex da
-    > latex da
-    > latex da
+    \addbibresource{literatur.bib}
+\end{verbatim}
+%
+Es können jederzeit noch weitere Literaturdatenbanken angelegt bzw. vorhandene online Literaturdatenbanken hinzugefügt werden. 
+%
+\begin{verbatim}
+    \addbibresource[location=remote]{http://www.citeulike.org/bibtex/group/9517}
+    \addbibresource[location=remote,label=lan]{ftp://192.168.1.57/~user/file.bib}
 \end{verbatim}
 %
 In der \emph{TeXnicCenter}-Umgebung wird (bei richtiger Einstellung) die
-erforderliche BibTeX-Anweisungsfolge automatisch bei jedem \latex-Durchlauf
+erforderliche BibLaTeX-Anweisungsfolge automatisch bei jedem \latex-Durchlauf
 ausgeführt.
 
 
@@ -189,412 +196,31 @@ ausgeführt.
 
 \subsection{Beispiele}
 Im Folgenden einige Beispiele für die wichtigsten Formen von Quellenangaben
-und die zugehörigen Einträge in der BibTeX-Datei.
-Die Form der Literaturangaben ist natürlich abhängig vom verwendeten
-BibTeX-Stil, für die hier gezeigten Beispiele wurde \texttt{bababbrv} verwendet.
+und die zugehörigen Einträge in der BibLaTeX-Datei.
 Weitere Beispiele finden sich im übrigen Text \bzw im
 Literaturverzeichnis.
 
-
-%%------------------------------------------------------
-\subsubsection{Buch (\texttt{@book})} 
-\nocite{BurgerBurge06}
-
-\begin{description}
-\item[\it Elemente:] \hfill\break
-     Autor(en), Buchtitel, Verlag, Erscheinungsort, Erscheinungsjahr.
-\item[\it Beispiel:] \hfill\break
-     {\sc Burger, W.} \btxandshort{.}\ {\sc M.~Burge}: {\em Digitale
-  Bildverarbeitung -- Eine Einführung mit Java und ImageJ\/}.
-\newblock Springer-Verlag, Heidelberg, 2. \btxeditionshort{.}, 2005.
-\item[\it BibTeX-Eintrag:] \mbox{}\par
-%
-\begin{GenericCode}
-@book{BurgerBurge06,
-    author={Burger, Wilhelm and Burge, Mark},
-    title={Digitale Bildverarbeitung -- 
-           Eine Einführung mit Java und ImageJ},
-    publisher={Springer-Verlag},
-    address={Heidelberg},
-    edition={2},
-    year={2005},
-    language={german}
-}
-\end{GenericCode}
-\end{description}
-
-%%------------------------------------------------------
-\subsubsection{Buchbeitrag, Beitrag in einem Sammelband (\texttt{@incollection})}
-\nocite{Ears99}
-\begin{description}
-\item[\it Elemente:] \hfill\break
-   Autor(en), Buchtitel, Herausgeber, Buchtitel, [Kapitel,] Verlag, Erscheinungsort,
-   Erscheinungsjahr.
-\item[\it Beispiel:] \hfill\break
-\textsc{Burge, M.} \btxandshort{.}\ \textsc{W.~Burger}: \emph{Ear Biometrics}.
-\newblock \Btxinshort{.}\ \textsc{Jain, A.~K.}, \textsc{B.~Ruud} \btxandshort{.}\
-  \textsc{P.~Sharath}\ (\btxeditorsshort{.}): \emph{Biometrics: Per\-sonal
-  Identification in Networked Society}, \btxchaptershort{.}~13. Klu\-wer
-  Academic Publishers, Boston, 1999.
-\item[\it BibTeX-Eintrag:] \mbox{}\par
-%
-\begin{GenericCode}
-@incollection{Ears99,
-  author={Burge, Mark and Burger, Wilhelm},
-  title={Ear Biometrics},
-  booktitle={Biometrics: Personal Identification in Networked
-	           Society},
-  publisher={Kluwer Academic Publishers},
-  year={1999},
-  address={Boston},
-  editor={Jain, Anil K. and Bolle Ruud and Pankanti Sharath},
-  chapter={13},
-  language={english}
-}
-\end{GenericCode}
-\end{description}
-
-%%------------------------------------------------------
-\subsubsection{Konferenzbeitrag, Beitrag in einem Tagungsband (\texttt{@inproceedings})}
-\nocite{Burger87}
-
-\begin{description}
-\item[\it Elemente:] \hfill\break
-  Autor(en), Titel des Beitrags, Titel des Konferenzbands (\emph{Conference
-  Proceedings}), Seiten,
-  Ort der Tagung, Monat/Jahr der Tagung, Verlag.
-\item[\it Beispiel:] \hfill\break
-\textsc{Burger, W.} \btxandshort{.}\ \textsc{B.~Bhanu}: \emph{Qualitative Motion
-  Understanding}.
-\newblock \Btxinshort{.}\ \emph{Proceedings of the Intl.\ Joint Conference on
-  Artificial Intelligence}, \btxpagesshort{.}\ 819--821, San Francisco,
-  May\ 1987. Morgan Kaufmann Publishers.
-\item[\it BibTeX-Eintrag:] \mbox{}\par
-%
-\begin{GenericCode}
-@inproceedings{Burger87,
-  author={Burger, Wilhelm and Bhanu, Bir},
-  title={Qualitative Motion Understanding},
-  booktitle={Proceedings of the Intl.\ Joint Conference
-	           on Artificial Intelligence},
-  year={1987},
-  month=MAY,
-  publisher={Morgan Kaufmann Publishers},
-  address={San Francisco},
-  pages={819-821},
-  language={english}
-}
-\end{GenericCode}
-\end{description}
-
-%%------------------------------------------------------
-\subsubsection{Zeitschriftenbeitrag, Journal Paper (\texttt{@article})}
-\nocite{Guttman01}
-
-\begin{description}
-
-\item[\it Elemente:] \hfill\break
-    Autor(en), Titel des Beitrags, Zeitschrift, Band, Seiten, Monat(e),
-    Erscheinungsjahr.
-\item[\it Beispiel:] \hfill\break
-\textsc{Guttman, E.}: \emph{Autoconfiguration for {IP} Networking}.
-\newblock IEEE Internet Computing, 5:81--86, Mai/Juni\ 2001.
-\item[\it BibTeX-Eintrag:] \mbox{}\par
-%
-\begin{GenericCode}
-@article{Guttman01,
-  author={Guttman, Erik},
-  title={Autoconfiguration for {IP} Networking},
-  journal={IEEE Internet Computing},
-  volume={5},
-  year={2001},
-  pages={81-86},
-  month=MAY # "/" # JUN,
-  language={english}
-}
-\end{GenericCode}
-\end{description}
-
-%%------------------------------------------------------
-\subsubsection{Dissertation (\texttt{@phdthesis})}
-\nocite{Eberl87}
-
-\begin{description}
-\item[\it Elemente:] \hfill\break
-  Autor, Titel, Hochschule, Institut, Adresse, Monat, Jahr.
-\item[\it Beispiel:] \hfill\break
-\textsc{Eberl, G.}: \emph{Automatischer Landeanflug durch Rechnersehen}.
-\newblock \btxphdthesis{}, Universität der Bundeswehr, Fakultät für
-  Raum- und Luftfahrttechnik, München, August\ 1987.
-\item[\it BibTeX-Eintrag:] \mbox{}\par
-%
-\begin{GenericCode}
-@phdthesis{Eberl87,
-  author={Eberl, Gerhard},
-  title={Automatischer Landeanflug durch Rechnersehen},
-  school={Universität der Bundeswehr, Fakultät für
-	        Raum- und Luftfahrttechnik},
-  year={1987},
-  month=AUG,
-  address={München},
-  language={german}
-}
-\end{GenericCode}
-\end{description}
-
-%%------------------------------------------------------
-\subsubsection{Diplomarbeit (\texttt{@mastersthesis})}
-\nocite{Wintersberger00}
-
-\begin{description}
-\item[\it Elemente:] \hfill\break
-  Autor, Titel, Hochschule, Institut, Adresse, Monat, Jahr.
-\item[\it Beispiel:] \hfill\break
-\textsc{Wintersberger, M.}: \emph{Realisierung eines Internet-Auktionshauses
-  basierend auf {PHP} und {MySQL}}.
-\newblock \btxmastthesis{}, Fachhochschule Hagenberg, Medientechnik und
-  -design, Hagenberg, Austria, Juni\ 2000.
-\item[\it BibTeX-Eintrag:] \mbox{}\par
-%
-\begin{GenericCode}
-@mastersthesis{Wintersberger00,
-  author={Wintersberger, Markus},
-  title={Realisierung eines Internet-Auktionshauses
-	       basierend auf {PHP} und {MySQL}},
-  school={Fachhochschule Hagenberg, Medientechnik und -design},
-  year={2000},
-  month=JUN,
-  address={Hagenberg, Austria},
-  language={german}
-}
-\end{GenericCode}
-\end{description}
-
-%%------------------------------------------------------
-
-
-\subsubsection{Bachelorarbeit (\texttt{@masterthesis} modifiziert)}
-
-Bachelorarbeiten gelten in der Regel zwar nicht als "`richtige"' Publikationen, bei Bedarf muss man sie aber doch referenzieren können. Das geht ebenfalls mit dem Eintrag \verb!@mastersthesis{}!, versehen mit einem entsprechenden \verb!type!-Feld, zum Beispiel \cite{Bacher04}:
-%
-\begin{description}
-\item[\it BibTeX-Eintrag:] \mbox{}\par
-%
-\begin{GenericCode}
-@mastersthesis{Bacher04,
-  author={Bacher, Florian},
-  title={Interaktionsmöglichkeiten mit Bildschirmen 
-         und gro\ss flächigen Projektionen},
-  school={Fachhochschule Hagenberg, Medientechnik und -design},
-  year={2004},
-  month=JUN,
-  address={Hagenberg, Austria},
-  type={Bachelorarbeit},
-  url={http://theses.fh-hagenberg.at},
-  language={german}
-}
-\end{GenericCode}
-\end{description}
-%
-Man beachte, dass der Inhalt des Eintrags \verb!url={..}! automatisch und ohne weitere Auszeichnung mit den Einstellungen des \verb!\url{}! Makros gesetzt wird.
-
-%%------------------------------------------------------
-\subsubsection{Bericht, Technical Report (\texttt{@techreport})}
-\nocite{Beeler48}
-
-Das sind typischerweise nummerierte Berichte aus Unternehmen, Hochschulinstituten oder Forschungsprojekten, 
-Wichtig ist, dass die herausgebende Organisationseinheit (Institut, Fakultät etc.) und 
-Adresse vollständig angegeben wird.
-%
-\begin{description}
-\item[\it Elemente:] \hfill\break
-  Autor(en), Titel, Report-Nummer, Institution, Adresse, Monat, Jahr.
-\item[\it Beispiel:] \hfill\break
-\textsc{Beeler, D.~E.} \btxandshort{.}\ \textsc{J.~P. Mayer}: \emph{Measurement of the
-  wing and tail loads during acceptance test of the {Bell} {XS-1} research
-  airplane}.
-  \newblock \Btxtechrepshort{.}\ NACA-RM-L7L12, NASA Dryden Flight Research
-  Center, Edwards, CA, April\ 1948. \url{www.dfrc.nasa.gov/DTRS/1948/index.html}
-\item[\it BibTeX-Eintrag:] \mbox{}\par
-%
-\begin{GenericCode}
-@techreport{Beeler48,
-  author={Beeler, De E. and Mayer, John P.},
-  title={Measurement of the wing and tail loads 
-         during acceptance test of the {Bell} 
-         {XS-1} research airplane},
-  institution={NASA Dryden Flight Research Center},
-  year={1948},
-  address={Edwards, CA},
-  number={NACA-RM-L7L12},
-  url={www.dfrc.nasa.gov/DTRS/1948/index.html},
-  language={english}
-}
-\end{GenericCode}
-\end{description}
-
-%%------------------------------------------------------
-\subsubsection{Handbuch, Manual (\texttt{@manual})}
-
-Dieser Publikationstyp bietet sich zum einen natürlich für Handbücher und Produktbeschreibungen an, insbesondere aber auch für viele Dokumente, bei denen etwa kein Autor genannt ist, wie bei vielen Online-Quellen.
-
-\begin{description}
-\item[\it Elemente:] \hfill\break
-  Autor(en) oder Institution, Titel des Dokuments, Adresse, Datum.
-\item[\it Beispiel:] \hfill\break
-{\sc Microsoft Corporation}: {\em Application Service Providers: Evolution
-  and Resources\/}, Jan.\ 2001.
-\newblock \url{www.microsoft.com/ISN/downloads/ASP.doc}, Kopie auf CD-ROM.
-\item[\it BibTeX-Eintrag:] \mbox{}\par
-%
-\begin{GenericCode}
-@manual{Microsoft01,
-  organization={Microsoft Corporation},
-  title={Application Service Providers: Evolution and Resources},
-  year={2001},
-  month=JAN,
-  url={www.microsoft.com/ISN/downloads/ASP.doc}, 
-  note={Kopie auf CD-ROM},
-  language={english}
-}
-\end{GenericCode}
-\end{description}
-
-
-%%------------------------------------------------------
-\subsubsection{Sonderfälle (\texttt{@misc})}
-
-Es kommt immer wieder vor, dass spezielle
-Quellen zu berücksichtigen sind. Bei Technischen Diplomarbeiten fallen
-vor allem Normen und Patente in diesen Bereich. Andere Beispiele sind
-Filme, Videos oder Musikstücke. Für diese gibt es in BibTeX leider keine eigenen Vorkehrungen, sie können aber mit dem \texttt{@misc}-Eintrag
-erstellt werden. Nachfolgend einige Beispiele für häufig
-erforderliche Situationen.
-
-\paragraph{Patent:} In Patenten befindet sich ein großer Teil des aktuellsten
-Technischen Wissens. Dementsprechend sind in technischen Diplomarbeiten häufig
-Patente als Quellen anzuführen. Als Beispiel dient hier das European Patent No.
-EP1765031 \cite{PAT07}
-
-%
-\begin{description}
-\item[\it BibTeX-Eintrag:] \mbox{} \par 
-\begin{GenericCode}
-@misc {PAT07,
-    author = {M. Anisetti and {C.A.} Ardagna and V. Bellandi and E. Damiani},
-    howpublished = {European Patent No. EP1765031},
-    title = {Method, System, Network and Computer Program Product for Positioning in a Mobile Communications Network},
-    month = MAR,
-    day = {21},
-    year = {2007},
-    language={english}
-} 
-\end{GenericCode}
-\end{description}
-
-\paragraph{Norm:} Normen sind in der Technik allgegenwärtig. Beispiele sind zwei
-Teile der Norm DIN 9241. Teil 11\cite{DIN9241-11} und Teil
-110\cite{DIN9241-110}.
-
-\begin{description}
-\item[\it BibTeX-Eintrag:] \mbox{} \par 
-\begin{GenericCode}
-@misc{DIN9241-110,
-  publisher = {Europäisches Kommittee für Normung},
-  title = {Ergonomie der Mensch-System-Interaktion: Teil 110 Grundsätze der Dialoggestaltung},
-  howpublished = {DIN 9241-110},
-  year = 2006,
-  language={german}
-}
-
-@misc{DIN9241-11,
-  howpublished = {DIN EN ISO 9241-11},
-  title = {Ergonomische Anforderungen für Bürotätigkeiten mit Bildschirmgeräten 
-Teil 11: Anforderungen an die Gebrauchstauglichkeit - Leitsätze},
-  year = 1999,
-  month =JAN,
-  language={german}
-}
-\end{GenericCode}
-\end{description}
-
-%
-
-\paragraph{Audio-CD:} Hier ein Vorschlag unter der Annahme, dass es sich um das Werk eines oder mehrerer klar identifizierbarer Künstler (Autoren) handelt. Ansonsten könnte man alternativ ein Format ähnlich wie für einen Film (\su) verwenden.\nocite{Zappa95}
-%
-\begin{description}
-\item[\it Beispiel:] \hfill\break
-\textsc{Zappa, F.}: \emph{Freak Out}.
-\newblock Audio-CD, Rykodisc, New York, \btxmonmayshort{.}\ 1995.
-%
-\item[\it BibTeX-Eintrag:] \mbox{} \par 
-\begin{GenericCode}
-@misc{Zappa95,
-  author={Zappa, Frank},
-  title={Freak Out},
-  year={1995},
-  month=MAY,
-  howpublished={Audio-CD, Rykodisc, New York},
-  language={english}
-}
-\end{GenericCode}
-\end{description}
-
-
-\paragraph{Film/DVD:} In diesem Fall wird bewusst \emph{kein} Autor angegeben, weil dieser bei einem Film \ia\ nicht eindeutig zu benennen ist. Aus diesem Grund wird ein \texttt{key}-Feld angegeben, das (anstelle des Autors) für die Sortierung verwendet wird.\nocite{Nosferatu}
-%
-\begin{description}
-\item[\it Beispiel:] \hfill\break
-\emph{Nosferatu -- A Symphony of Horrors}.
-\newblock Drehbuch/Regie: F. W. Murnau. Mit Max Schreck, Gustav von Wangenheim,
-  Greta Schröder, 1922.
-\newblock DVD, Film Preservation Associates, London (1991).
-\item[\it BibTeX-Eintrag:] \mbox{}\par
-\begin{GenericCode}
-@misc{Nosferatu,
-  key={Nosferatu},
-  title={Nosferatu -- A Symphony of Horrors},
-  year={1922},
-  howpublished={Drehbuch/Regie: F. W. Murnau. 
-  Mit Max Schreck, Gustav von Wangenheim, Greta Schröder},
-  note={DVD, Film Preservation Associates, London (1991)},
-  language={german}
-}
-\end{GenericCode}
-\end{description}
-Ein weiteres Filmbeispiel ist \emph{Psycho} von Alfred Hitchcock \cite{Psycho}.
-
-
-\paragraph{Persönliche Kommunikation:}
-Ein Sonderfall sind Quellen ohne
-irgendeiner Form von Veröffentlichung, wie \zB Hinweise aus
-persönlichen Gesprächen (\emph{personal communication}) mit Fachleuten.
-Obwohl man auf diese Art von Verweisen \textbf{nur im äußersten Fall}
-zurückgreifen sollte, hier ein Beispiel wie man damit umgeht:
-\nocite{Kreisky75}
-
-\begin{description}
-\item[\it Beispiel:] \hfill\break
-\textsc{Kreisky, B.}: \emph{Kaffeehausgespräch zur Lage der Nation}.
-\newblock Persönl.\ Gespräch, Nov.\ 1975.
-\item[\it BibTeX-Eintrag:] \mbox{}\par
-%
-\begin{GenericCode}
-@misc{Kreisky75,
-  author={Kreisky, Bruno},
-  title={Kaffeehausgespräch zur Lage der Nation},
-  year={1975},
-  month=NOV,
-  howpublished={Persönl.\ Gespräch},
-  language={german}
-}
-\end{GenericCode}
-\end{description}
+\begin{itemize}
+\item Buch (\texttt{@book})\footcite{BurgerBurge06}
+\item Mehrbändige Bücher (\texttt{@mvbook})
+\item Teil eines Buches (\texttt{@inbook})
+\item Buchähnliche Publikation (\texttt{@booklet}) 
+\item Buchbeitrag, Beitrag in einem Sammelband (\texttt{@incollection})\footcite{Ears99}
+\item Konferenzbeitrag, Beitrag in einem Tagungsband (\texttt{@inproceedings})\footcite{Burger87}
+\item Zeitschriftenbeitrag, Journal Paper (\texttt{@article})\footcite{Guttman01}
+\item Dissertation (\texttt{@phdthesis})\footcite{Eberl87}
+\item Diplomarbeit (Universität, \texttt{@mastersthesis})\footcite{Wintersberger00}
+\item Bachelorarbeit (\texttt{@masterthesis} modifiziert)\footcite{Bacher04}
+\item Bericht, Technical Report (\texttt{@techreport})\footcite{Beeler48}
+\item Handbuch, Manual, Online-Dokumentation (\texttt{@manual})\footcite{Microsoft01}
+\item Sonderfälle wie \zB Patente\footcite{PAT07}, Normen\footcite{DIN9241-11}\footcite{DIN9241-110}, Audio-CDs\footcite{Zappa95}, Filme\footcite{Nosferatu}, Persönliche Kommunikation\footcite{Kreisky75} (\texttt{@misc})
+\item Online Quellen (\texttt{@online})
+\end{itemize}
 
 %%------------------------------------------------------
 \subsubsection{Online-Quellen, Wiki-Einträge etc.}
-\label{sec:OnlneQuellen}
-\nocite{Microsoft01}
+\label{sec:OnlineQuellen}
+
 
 Verweise auf Webseiten sollten generell nur in Ausnahmefällen
 verwendet werden und auch nur dann, wenn keine entsprechende
@@ -633,7 +259,7 @@ verwenden, und zwar \emph{ohne} die sonst erforderlichen Klammern (oder Hochkomm
 \end{quote}
 %
 Der richtige Monatsname wird abhängig von der Spracheinstellung für das Dokument automatisch eingesetzt.
-Ein Intervall über \emph{mehrere} Monate kann man in der (etwas eigenartigen) BibTeX-Syntax so angeben (verwendet \zB\ für "`Mai/Juni"' in \cite{Guttman01}):
+Ein Intervall über \emph{mehrere} Monate kann man in der (etwas eigenartigen) BibTeX-Syntax so angeben (verwendet \zB\ für "`Mai/Juni"' in \citetitle{Guttman01}\footcite{Guttman01}):
 \begin{quote}
 \verb!month=MAY # "/" # JUN!
 \end{quote}
@@ -659,4 +285,4 @@ bei einer dritten Auflage. Die richtige Punktuation in der Quellenangabe wird in
 
 \subsubsection{Listing aller Quellen}
 
-Durch die Anweisung \verb!\nocite{*}! -- an beliebiger Stelle im Dokument platziert -- werden \emph{alle} bestehenden Einträge der BibTeX-Datei im Literaturverzeichnis aufgelistet, also auch jene, für die es keine explizite \verb!\cite{}! Anweisung gibt. Das ist ganz nützlich, um während des Schreibens der Arbeit eine aktuelle Übersicht auszugeben. Normalerweise müssen aber alle angeführten Quellen auch im Text referenziert sein!
+Durch die Anweisung \verb!\nocite{*}! -- an beliebiger Stelle im Dokument platziert -- werden \emph{alle} bestehenden Einträge der BibTeX-Datei im Literaturverzeichnis aufgelistet, also auch jene, für die es keine explizite \verb!\footcite{}! Anweisung gibt. Das ist ganz nützlich, um während des Schreibens der Arbeit eine aktuelle Übersicht auszugeben. Normalerweise müssen aber alle angeführten Quellen auch im Text referenziert sein!
